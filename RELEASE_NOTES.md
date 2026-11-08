@@ -1,4 +1,22 @@
-# Switch Field Kit 0.1.2
+# Switch Field Kit 0.1.3
+
+Makes the tested startup and library-shortcut setup repeatable from the public download.
+
+- Field Kit opens automatically after Ubuntu sign-in on a normal first installation. Use `fieldkit autostart off` or `on` to choose. Updates preserve that choice.
+- Applications and desktop shortcuts use a clear green Field Kit icon and a distinct window identity.
+- Desktop launchers also work with spaces and percent signs in their paths on older Ubuntu installations.
+- An optional helper preserves an already installed original Offline Library, gives it a separate **OLD** icon, and disables only its automatic browser window. Its books, maps and services stay in place.
+- Existing shared-book setups can make Field Kit wait for the original mount service. No large files are copied and no split-file mount is created by this release.
+- The guide now covers the complete Hekate → Ubuntu sign-in → Field Kit chain, stock fallback, returning to Ubuntu, and the exact checks to repeat on your own console.
+- Uninstall removes Field Kit's login and desktop shortcuts while keeping content and the independently working original library.
+
+**Update:** extract this release, open Terminal in its folder and run `bash setup.sh --no-guides`. Close and reopen Field Kit afterwards. For a new installation, use `bash setup.sh` and follow [Start here](docs/START_HERE.md). Original-library users should also follow [Keep the original library](docs/KEEP_ORIGINAL.md).
+
+All 26 automated tests passed on the Switch's Python 3.6.9. The packaged 0.1.3 code also passed an isolated real-service and desktop-launch test on systemd 237, including paths with spaces and percent signs. The full reboot, stock HOME screen, return to Field Kit and original-reader access passed using 0.1.2 with the local changes now included here. This does not claim a tested clean Noble installation or measured battery runtime. [Verification details](docs/TESTING.md).
+
+The original prototype and the owner's full collection are not bundled. Fresh installs download the guide catalogue and add chosen Wikipedia books and maps separately. Hekate, partitions and stock boot are not modified by the installer.
+
+## Version 0.1.2
 
 Fixes startup on older Switchroot Ubuntu installations using systemd 237. That version interprets the quoted working-directory path in 0.1.1 literally and refuses to start the reader. The service now uses a quoted Python module path instead.
 

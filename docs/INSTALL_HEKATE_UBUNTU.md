@@ -166,6 +166,8 @@ bash setup.sh
 
 Install the guides, then choose any books and maps you need. Turn Wi-Fi off and check a guide, an enlarged page, a book search and a saved map before relying on the offline library.
 
+For a device that opens the reader as soon as it starts, follow [the three automatic-startup settings](START_HERE.md#7-open-straight-into-field-kit), then [test reboot, stock HOME and the return to Field Kit](START_HERE.md#9-test-a-complete-reboot-and-stock-fallback). The app installer handles opening its window after Ubuntu sign-in. You still choose Ubuntu autoboot in Hekate and optional automatic login in Ubuntu.
+
 ## If a step does not work
 
 | What you see | What to check first |

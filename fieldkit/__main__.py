@@ -11,6 +11,10 @@ def main():
     setup.add_argument('--port', type=int)
     setup.add_argument('--no-system', action='store_true', help='Do not offer apt installation')
     setup.add_argument('--no-service', action='store_true', help='Copy app only, without enabling systemd')
+    startup = setup.add_mutually_exclusive_group()
+    startup.add_argument('--autostart', dest='autostart', action='store_true', help='Open the reader after Ubuntu sign-in (default on first service installation)')
+    startup.add_argument('--no-autostart', dest='autostart', action='store_false', help='Open the reader manually from its launcher')
+    setup.set_defaults(autostart=None)
     choice = setup.add_mutually_exclusive_group()
     choice.add_argument('--guides', dest='guides', action='store_true')
     choice.add_argument('--no-guides', dest='guides', action='store_false')
@@ -23,6 +27,9 @@ def main():
     sub.add_parser('list', help='List available original guides')
     sub.add_parser('doctor', help='Check dependencies, space and saved PDFs')
     sub.add_parser('open', help='Open the offline library')
+    startup = sub.add_parser('autostart', help='Choose whether the reader opens after Ubuntu sign-in')
+    startup.add_argument('state', choices=['on', 'off'])
+    sub.add_parser('wait-books', help='Wait for registered book files (optional shared-storage startup hook)')
     sub.add_parser('restart', help='Restart the user service after importing books')
     sub.add_parser('kiwix', help='Download pinned upstream Kiwix tools')
     book = sub.add_parser('add-book', help='Register a local ZIM file without copying it')
@@ -60,6 +67,12 @@ def main():
         elif args.command == 'open':
             from .install import open_library
             open_library()
+        elif args.command == 'autostart':
+            from .desktop import set_autostart
+            set_autostart(args.state == 'on')
+        elif args.command == 'wait-books':
+            from .install import wait_books
+            wait_books()
         elif args.command == 'restart':
             subprocess.check_call(['systemctl', '--user', 'restart', 'switch-field-kit.service'])
         elif args.command == 'kiwix':

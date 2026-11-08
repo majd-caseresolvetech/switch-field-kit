@@ -1,5 +1,28 @@
 # Verification
 
+## Complete boot and fallback acceptance check
+
+Completed on 8 November 2026 on the owner's existing ARM64 Switch, running Ubuntu 18.04, Python 3.6.9 and systemd 237, with version 0.1.2 plus the local startup/shortcut changes now packaged in 0.1.3:
+
+- Ubuntu was restarted through its normal power menu. A changed Linux boot ID confirmed a real reboot. Field Kit opened automatically, confirmed on screen by the owner.
+- After reboot, the reader served all 27 installed guides, all 10 registered books and all six saved maps. The original library and its map service also responded.
+- The owner interrupted autoboot, selected **Launch → 100% STOCK OFW** and confirmed Nintendo's HOME menu.
+- After powering off from stock and starting normally again, a second changed boot ID confirmed the return to Ubuntu. Field Kit again opened automatically, confirmed on screen.
+- The old reader was given a separate window identity and an **OLD** icon. The owner confirmed the original **Field Library** was visible. Both desktop launchers were exercised through `gtk-launch` and their foreground window titles were checked.
+- Hekate's configuration checksums stayed unchanged. Extra test windows were closed and Field Kit was left open.
+
+The stock screen was confirmed by the device owner. Ubuntu health, content availability, boot IDs and foreground library windows were checked remotely. This is one existing installation, not a fresh Noble install or coverage of every hardware revision. No long-duration battery-runtime claim is made.
+
+## Version 0.1.3 repeatable setup
+
+The public installer now includes login startup, a named desktop shortcut, a distinct Field Kit window identity, an on/off command that survives updates, and removal of its startup shortcuts on uninstall. The optional original-library helper backs up existing shortcuts, separates the old reader, and can wait for an existing shared-book service.
+
+All 26 automated tests passed on the Switch's Python 3.6.9. They cover login setup, update/removal, translated and disabled desktop folders, window identity, missing shared storage, and preserving the original app.
+
+The packaged code was also installed into an isolated test folder on that Switch. A real systemd 237 service started successfully. `gtk-launch` opened the installed desktop shortcut and its foreground title and separate `SwitchFieldKit` window class were checked. Both the app and configuration paths included spaces and a percent sign. This found a GLib 2.56 launcher parsing issue: it checks an executable path before expanding literal percent signs. The generated shortcut now uses a fixed `/usr/bin/env` executable and passes the user launcher path as an argument.
+
+The test service and windows were removed afterwards. Hekate's checksum and the owner's working library remained unchanged. The hardware boot result above records the complete restart test before packaging these changes. The isolated 0.1.3 test did not perform another full device reboot. See the exact release commit's Actions run for its automated results.
+
 ## Version 0.1.2 native service fix
 
 Checked on 8 November 2026 on an ARM64 Switch with Python 3.6.9 and systemd 237:
@@ -11,7 +34,7 @@ Checked on 8 November 2026 on an ARM64 Switch with Python 3.6.9 and systemd 237:
 - The reader registered the owner's 10 existing ZIM collections and six PMTiles archives without copying those large files. Its Kiwix endpoint responded, all books were present, and all six maps served valid byte-range responses.
 - The Hekate configuration checksum stayed unchanged. The original library remained available.
 
-This was an existing Ubuntu installation, not a fresh Noble installation or a test of every hardware variant. A complete reboot and long-duration battery life remain untested. Device-specific split-Wikipedia mounting is managed by the owner's existing setup, not by the public installer.
+This was an existing Ubuntu installation, not a fresh Noble installation or a test of every hardware variant. The subsequent complete reboot check is recorded above. Long-duration battery life remains untested. Device-specific split-Wikipedia mounting is managed by the owner's existing setup, not created by the public installer.
 
 ## Version 0.1.1 review
 
@@ -41,7 +64,7 @@ The live ARM map-tool download encountered an upstream GitHub HTTP 504 timeout. 
 
 The Switch test used a separate temporary app and data directory. It did not replace the owner's existing library. The existing library services remained active and the Hekate configuration checksum was unchanged.
 
-This is an initial release. A clean Switchroot Noble installation, every Switch hardware variant, the desktop service across a full reboot, physical touch interactions and long-duration battery life have not been validated. No battery-runtime claim is made. Publisher accuracy and suitability for a particular emergency are not established by these software tests.
+At the initial release, a clean Switchroot Noble installation, every Switch hardware variant, the desktop service across a full reboot, physical touch interactions and long-duration battery life had not been validated. The later boot and screen checks are recorded above. No battery-runtime claim is made. Publisher accuracy and suitability for a particular emergency are not established by these software tests.
 
 ## Repeat the checks
 

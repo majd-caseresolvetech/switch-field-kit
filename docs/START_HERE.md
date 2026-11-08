@@ -58,7 +58,9 @@ If PDF tools are missing, the installer can run Ubuntu’s package manager. It a
 
 Keep the charger connected during the first download. The installer downloads the complete original PDFs and turns each original sheet into a local image. It checks hashes so a changed or incomplete download is not silently accepted.
 
-When it finishes, open **Switch Field Kit** in the Applications menu. There is no login to the app.
+When it finishes, open **Switch Field Kit** in the Applications menu or its named desktop shortcut. There is no login to the app. Setup also makes it open automatically the next time you sign in to Ubuntu.
+
+If a desktop shortcut says **Untrusted**, choose **Allow Launching** or **Trust and Launch**. Some desktops hide desktop icons. In that case, use the Applications menu, then right-click the running icon and choose **Keep in Launcher** or **Pin**. The Field Kit icon is a green terminal marked **FIELD KIT**.
 
 Setup checks that the reader is running before reporting success. If only a content download fails, the reader remains installed and explains the retry command. If you skip the PDF tools, you can still open the reader, but must install those tools before downloading guides. Do not run the whole setup again just because one publisher was unavailable.
 
@@ -82,9 +84,52 @@ Turn Wi-Fi off after downloading. Open a guide, change pages and enlarge a diagr
 
 No account or internet service is needed for those saved files. A publisher-source link still needs internet, and a guide that was never downloaded will remain unavailable.
 
-## 7. Updates, removal and stock boot
+## 7. Open straight into Field Kit
 
-For app updates, download a new release and run its `setup.sh`. Downloaded content stays in its separate folder. The immediately previous app copy is retained for manual recovery.
+The full startup chain has three parts:
+
+| Stage | What to set | Who handles it |
+| --- | --- | --- |
+| Hekate → Ubuntu | Select your installed Ubuntu entry for autoboot in Hekate's **Options**, keep a 3-second boot wait, then save. | You, in Hekate. |
+| Ubuntu → desktop | Enable **Automatic Login** for your account in Ubuntu's user/login settings if you want no sign-in screen. The location varies between Unity, GNOME and Kubuntu. | You, in Ubuntu. |
+| Desktop → Field Kit | Enabled by normal Field Kit setup. | This installer. |
+
+Start with a known working Ubuntu and stock entry. Do not replace `hekate_ipl.ini` with another console's file or choose a boot-entry number copied from a guide. [Hekate documents its autoboot settings](https://github.com/CTCaer/hekate#bootloader-configuration). For a USB-payload console, autoboot begins **after Hekate is loaded**. It does not remove the need to send a payload after a full power-off.
+
+Automatic login removes the Ubuntu sign-in step for anyone holding the device. It does not remove your account password or change the password used by `sudo`. The installer does not edit Ubuntu's login configuration. [Ubuntu's automatic-login guide](https://help.ubuntu.com/stable/ubuntu-help/user-autologin.html.en).
+
+To choose whether the Field Kit window opens at sign-in:
+
+```bash
+~/.local/bin/fieldkit autostart on
+```
+
+Replace `on` with `off` to open it manually. Your choice survives app updates. For a first install without automatic opening, use `bash setup.sh --no-autostart`. Advanced `--no-service` installations do not enable automatic opening.
+
+## 8. Keep an older library, if you have one
+
+New users can skip this step. Field Kit is the public app. The original prototype and its larger personal collection are not bundled.
+
+If `Offline Library` is already installed, follow [Keep the original library](KEEP_ORIGINAL.md). The helper gives it a green stacked-books icon marked **OLD**, keeps Field Kit as the only startup window, and preserves the old files and services. You can use both without duplicating the large books and maps.
+
+## 9. Test a complete reboot and stock fallback
+
+Do this while you have the charger and your usual Hekate boot method available:
+
+1. Use Ubuntu's normal **Restart** menu. Do not open Field Kit yourself. Check that Ubuntu signs in and Field Kit opens automatically.
+2. Check a saved guide, an enlarged diagram, a book and a map. If you kept the older library, open its **OLD** shortcut and return using **Switch Field Kit**. Close the unused window to save memory.
+3. Restart Ubuntu again and immediately hold **Volume Down** until Hekate's menu appears. Release it. Choose your existing stock entry. On the tested console this was **Launch → 100% STOCK OFW**. Your entry may have a different name. A CFW or emuMMC entry is not the stock-fallback test.
+4. Confirm the normal Nintendo **HOME** menu appears. Seeing a stock option listed in Hekate is not enough.
+5. In Nintendo's system, hold Power for about 3 seconds, choose **Power Options → Turn Off**, then start with your usual Hekate method. Let Ubuntu and Field Kit start automatically again.
+6. Repeat the reading checks with Wi-Fi off. Confirm you can boot offline too, including sending a saved payload if your console needs one.
+
+If you reach Hekate or a login screen instead of Field Kit, check the relevant stage in section 7. If Ubuntu opens but Field Kit does not, use [startup troubleshooting](TROUBLESHOOTING.md#ubuntu-opens-but-field-kit-does-not-open-automatically). Do not reformat the card to fix an app launcher.
+
+The reboot, stock HOME screen, return to Field Kit and original-library access were checked on the owner's existing Switch. [Testing status](TESTING.md) distinguishes that device result from fresh-install and battery-life coverage.
+
+## 10. Updates and removal
+
+For app updates, download a new release and run `bash setup.sh --no-guides` in its extracted folder. Downloaded content stays in its separate folder. The immediately previous app copy is retained for manual recovery. Close and reopen the reader after an update, then repeat the startup check. Use `~/.local/bin/fieldkit guides all` separately if you want to add missing guides.
 
 To remove the application:
 
@@ -92,4 +137,4 @@ To remove the application:
 ~/.local/bin/fieldkit uninstall
 ```
 
-This keeps your library data and configuration. It does not remove Ubuntu or change Hekate. Returning to stock uses your existing boot-menu entry. Restoring or repartitioning an SD card is a separate task.
+This removes Field Kit's desktop and login shortcuts, and keeps your library data and configuration. An original-library shortcut created by the helper remains usable independently. It does not remove Ubuntu or change Hekate. Returning to stock uses your existing boot-menu entry. Restoring or repartitioning an SD card is a separate task.

@@ -82,6 +82,10 @@ def install(args):
         if not shutil.which('systemctl') or subprocess.call(['systemctl', '--user', 'show-environment'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL):
             raise RuntimeError('The Ubuntu login service is unavailable. Run setup from Terminal in your Ubuntu desktop as your normal user. For a manual installation, use --no-service --no-guides.')
     settings = config()
+    autostart = getattr(args, 'autostart', None)
+    if args.no_service and autostart:
+        raise ValueError('--autostart requires the login service. Omit --no-service.')
+    settings['autostart'] = (False if args.no_service else settings.get('autostart', True)) if autostart is None else autostart
     if args.data:
         settings['data'] = str(Path(args.data).expanduser().resolve())
     if args.port:
@@ -125,9 +129,8 @@ def install(args):
     units = user_config()/'systemd/user'
     units.mkdir(parents=True, exist_ok=True)
     atomic(units/'switch-field-kit.service', service_text(target).encode())
-    desktop = '[Desktop Entry]\nType=Application\nName=Switch Field Kit\nComment=Original guides, Wikipedia and maps without internet\nExec='+unit_quote(bindir/'fieldkit')+' open\nIcon=accessories-dictionary\nTerminal=false\nCategories=Education;Utility;\n'
-    applications = Path(os.environ.get('XDG_DATA_HOME', str(Path.home()/'.local/share')))/'applications'
-    atomic(applications/'switch-field-kit.desktop', desktop.encode())
+    from .desktop import install_shortcuts
+    install_shortcuts(target, settings['autostart'])
     if not args.no_service:
         subprocess.check_call(['systemctl', '--user', 'daemon-reload'])
         subprocess.check_call(['systemctl', '--user', 'enable', '--now', 'switch-field-kit.service'])
@@ -151,6 +154,10 @@ def install(args):
         print('\nApp files installed. Start the manual reader with: ~/.local/bin/fieldkit serve')
     else:
         print('\nReader is running. Open “Switch Field Kit” from your Applications menu.')
+        print('Login startup: '+('Field Kit opens automatically after Ubuntu sign-in.' if settings['autostart'] else 'open it from the launcher.'))
+        print('To change this later: ~/.local/bin/fieldkit autostart on (or off)')
+    if (Path.home()/'.local/bin/offline-library').is_file():
+        print('An older Offline Library is present. See docs/KEEP_ORIGINAL.md to give it a separate OLD shortcut and prevent two startup windows.')
     print('Browser address: http://127.0.0.1:'+str(settings['port'])+'/')
     print('Use HELP in the reader for adding guides, books and maps. Refresh after each download.')
     print('Commands: '+str(bindir/'fieldkit')+' help')
@@ -169,7 +176,7 @@ def open_library():
         binary = shutil.which(name)
         if binary:
             profile = app_home()/'browser'
-            subprocess.Popen([binary, '--user-data-dir='+str(profile), '--no-first-run', '--no-default-browser-check',
+            subprocess.Popen([binary, '--class=SwitchFieldKit', '--user-data-dir='+str(profile), '--no-first-run', '--no-default-browser-check',
                               '--disable-sync', '--disable-background-networking', '--password-store=basic',
                               '--start-maximized', '--app='+url], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
             return
@@ -187,6 +194,10 @@ def uninstall():
     subprocess.run(['systemctl', '--user', 'disable', '--now', 'switch-field-kit.service'])
     paths = [user_config()/'systemd/user/switch-field-kit.service', Path.home()/'.local/bin/fieldkit',
              Path(os.environ.get('XDG_DATA_HOME', str(Path.home()/'.local/share')))/'applications/switch-field-kit.desktop']
+    from .desktop import remove_shortcuts
+    remove_shortcuts()
+    # Only remove this project's optional dependency, not another app's service.
+    paths.append(user_config()/'systemd/user/switch-field-kit.service.d/original-library.conf')
     for p in paths:
         if p.exists():
             p.unlink()
@@ -195,6 +206,20 @@ def uninstall():
             shutil.rmtree(str(p))
     subprocess.run(['systemctl', '--user', 'daemon-reload'])
     print('App removed. Your library remains at '+config()['data'])
+    print('If you kept the original library, its launcher and files remain. See docs/KEEP_ORIGINAL.md to re-enable its login window.')
+
+
+def wait_books(timeout=60):
+    """Optional startup hook for books supplied by an existing mount service."""
+    books = read_json(data_dir()/'books.json', [])
+    deadline = time.monotonic()+timeout
+    while True:
+        missing = [b.get('title', b['path']) for b in books if not Path(b['path']).is_file()]
+        if not missing:
+            return
+        if time.monotonic() >= deadline:
+            raise RuntimeError('Library storage is not ready: '+', '.join(missing)+'. Check its mount or original library service.')
+        time.sleep(.5)
 
 def doctor():
     import socket
@@ -202,6 +227,7 @@ def doctor():
     settings = config()
     report = {'version':__version__, 'system':platform.system(), 'machine':platform.machine(),
               'python':platform.python_version(), 'data':settings['data'],
+              'opens_after_sign_in':settings.get('autostart', False),
               'free_bytes':shutil.disk_usage(str(data_dir())).free,
               'tools':{n:bool(shutil.which(n)) for n in ('curl', 'pdfinfo', 'pdftoppm', 'pdftotext')},
               'content':verify_content()}

@@ -41,7 +41,7 @@ The installer **does not format the SD card, change partitions, modify Hekate, i
 bash setup.sh
 ```
 
-The installer explains missing dependencies, creates a launcher, starts a local reader and offers to download the original guide pack. Allow **1 GB of free Ubuntu space** for the starter pack and rendering. Wikipedia and maps are separate choices.
+The installer explains missing dependencies, creates Applications and desktop shortcuts, starts a local reader and offers to download the original guide pack. **Field Kit opens automatically after Ubuntu sign-in.** Allow **1 GB of free Ubuntu space** for the starter pack and rendering. Wikipedia and maps are separate choices.
 
 Open **Switch Field Kit** from Ubuntu’s Applications menu, or open `http://127.0.0.1:8095` in its browser. **HELP** explains how to add content, with commands you can copy into Terminal. **MAPS** offers named areas and calculates the download size before you accept. Wikipedia and maps are not bundled with the app.
 
@@ -56,7 +56,15 @@ bash setup.sh --no-guides
 
 See the [beginner walkthrough](docs/START_HERE.md) for stock-console preparation, storage, downloads and first-use checks.
 
-To update an existing Field Kit installation, extract the newer release and run its `bash setup.sh` as the same Ubuntu user. Your separate library stays in place. The [current source ZIP](https://github.com/majd-caseresolvetech/switch-field-kit/archive/refs/heads/main.zip) is also available for development.
+### Make it a turn-on-and-read device
+
+There are three separate settings: Hekate starts Ubuntu, Ubuntu signs in, and Field Kit opens. Setup handles the last one. Follow [automatic startup and the full reboot check](docs/START_HERE.md#7-open-straight-into-field-kit) for the other two and for returning to stock. Keep your existing boot entries rather than copying someone else's configuration.
+
+Prefer opening the app yourself? Run `~/.local/bin/fieldkit autostart off`. Use `on` to restore automatic opening. Setup also accepts `--no-autostart`, and updates keep your choice.
+
+**Already have the older Offline Library?** Use [Keep the original library](docs/KEEP_ORIGINAL.md). It adds a distinct green **OLD** shortcut and keeps the old collection and services. The older prototype and the owner's full Wikipedia/map collection are not included in a fresh download.
+
+To update an existing Field Kit installation, extract the newer release and run `bash setup.sh --no-guides` as the same Ubuntu user. Your separate library stays in place. Close and reopen Field Kit after updating so its new window icon takes effect. The [current source ZIP](https://github.com/majd-caseresolvetech/switch-field-kit/archive/refs/heads/main.zip) is also available for development.
 
 ## Add books and maps
 
