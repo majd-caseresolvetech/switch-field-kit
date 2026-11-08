@@ -1,0 +1,1364 @@
+[
+  {
+    "id": "scouts-shelter",
+    "title": "Build woodland and tarp shelters",
+    "original": "Scout Survival Skills: Building Shelter",
+    "author": "The Scout Association, with Austin Lill, Terry Longhurst and Scout groups",
+    "publisher": "Scouts UK",
+    "edition": "2015",
+    "region": "UK",
+    "language": "English",
+    "categories": [
+      "shelter",
+      "bushcraft"
+    ],
+    "start": 3,
+    "scope": "Two complete worked builds: a natural A-frame and a 3 m × 3 m tarp shelter. Original materials lists, numbered instructions and construction photographs.",
+    "note": "A practical training guide. Its 2015 legal information is historical, not a current statement of UK law.",
+    "sections": [
+      [
+        3,
+        "Choose the site and materials"
+      ],
+      [
+        4,
+        "Natural A-frame: frame and covering"
+      ],
+      [
+        6,
+        "3 m × 3 m tarp: complete build"
+      ],
+      [
+        8,
+        "Plan and check the shelter"
+      ]
+    ],
+    "url": "https://cms.scouts.org.uk/media/3588/shelter-building-activities.pdf",
+    "sha256": "231daa29fbde7153c07ef5b8e6834222cdcb912ed153d54aec9a6c9b77b91230",
+    "bytes": 472498,
+    "pages": 9,
+    "distribution": "Download from the publisher for personal offline use. Publisher terms apply. Not covered by the software MIT licence.",
+    "source_page": "https://cms.scouts.org.uk/media/3588/shelter-building-activities.pdf"
+  },
+  {
+    "id": "ifrc-water",
+    "title": "Treat and store household water",
+    "original": "Household Water Treatment and Safe Storage in Emergencies",
+    "author": "IFRC. Contributors include Rebecca Kabura, Angelika Kessler and Daniele Lantagne",
+    "publisher": "Red Cross / Red Crescent",
+    "edition": "2008",
+    "region": "International",
+    "language": "English",
+    "categories": [
+      "water",
+      "sanitation"
+    ],
+    "start": 8,
+    "scope": "Complete field manual: straining, boiling, solar and chemical treatment, settling, filtration, safe storage and illustrated instruction sheets.",
+    "note": "Product-specific doses belong to the named product and container size in the original. Use the instructions for the product you actually have. This manual does not establish safety from chemical contamination.",
+    "sections": [
+      [
+        3,
+        "Complete contents"
+      ],
+      [
+        4,
+        "Understand contamination"
+      ],
+      [
+        8,
+        "Strain cloudy water"
+      ],
+      [
+        10,
+        "Boil water"
+      ],
+      [
+        12,
+        "Solar treatment"
+      ],
+      [
+        14,
+        "Chlorine tablets and named liquids"
+      ],
+      [
+        18,
+        "Three-pot settling method"
+      ],
+      [
+        20,
+        "Combined settling and disinfection"
+      ],
+      [
+        22,
+        "Ceramic and sand filters"
+      ],
+      [
+        24,
+        "Store and handle treated water"
+      ],
+      [
+        29,
+        "Choose a method: decision tree"
+      ],
+      [
+        32,
+        "Illustrated instruction sheets"
+      ]
+    ],
+    "url": "https://wash.ifrc.org/wp-content/uploads/2025/06/ifrc-hwts-manual-english.pdf",
+    "sha256": "0f66151671e801252bbf95d339addfd77301a37a4def8b1a7f850cc0b90962c2",
+    "bytes": 2329299,
+    "pages": 44,
+    "distribution": "Download from the publisher for personal offline use. Publisher terms apply. Not covered by the software MIT licence.",
+    "source_page": "https://wash.ifrc.org/wp-content/uploads/2025/06/ifrc-hwts-manual-english.pdf"
+  },
+  {
+    "id": "aub-water",
+    "title": "Lebanon: water testing and treatment",
+    "original": "Citizen Guide for Water Quality Testing",
+    "author": "Rima Baalbaki. Reviewed by Lamis Al Araj. Design by Dalia Barakat",
+    "publisher": "American University of Beirut",
+    "edition": "Date not stated",
+    "region": "Lebanon",
+    "language": "Arabic",
+    "categories": [
+      "water",
+      "sanitation"
+    ],
+    "start": 4,
+    "scope": "AUB citizen manual: water properties, chemical and microbial samples, storage tanks, treatment methods and protecting wells. Arabic original, with English section buttons.",
+    "note": "Taking a sample is not the same as obtaining a safe result. The tests described require the relevant equipment or a laboratory. Published standards and contacts may have changed.",
+    "sections": [
+      [
+        2,
+        "Contamination and water properties"
+      ],
+      [
+        3,
+        "Chemical testing table"
+      ],
+      [
+        4,
+        "Take chemical and microbial samples"
+      ],
+      [
+        5,
+        "Tank care and interpreting properties"
+      ],
+      [
+        6,
+        "Water for household use"
+      ],
+      [
+        7,
+        "Treatment methods"
+      ],
+      [
+        8,
+        "Protect wells from contamination"
+      ],
+      [
+        9,
+        "References and credits"
+      ]
+    ],
+    "url": "https://www.aub.edu.lb/natureconservation/Documents/Citizen%20Guide%20for%20Water%20Quality%20Testing.pdf",
+    "sha256": "3f22ed44dc98262865ae8ee2e49ea5f78f29cdab7492fe138923088ec0c300d3",
+    "bytes": 73710243,
+    "pages": 10,
+    "distribution": "Download from the publisher for personal offline use. Publisher terms apply. Not covered by the software MIT licence.",
+    "source_page": "https://www.aub.edu.lb/natureconservation/Documents/Citizen%20Guide%20for%20Water%20Quality%20Testing.pdf"
+  },
+  {
+    "id": "ifrc-shelter",
+    "title": "Shelter anchors, frames and waterproofing",
+    "original": "The IFRC Shelter Kit",
+    "author": "Carmen Ferrer, Irantzu Serra and Joseph Ashmore. Edited by Joseph Ashmore and Corinne Treherne",
+    "publisher": "Red Cross / Red Crescent",
+    "edition": "2010",
+    "region": "International",
+    "language": "English",
+    "categories": [
+      "shelter",
+      "building",
+      "bushcraft",
+      "refuge"
+    ],
+    "start": 34,
+    "scope": "Original construction drawings: sites, drainage, anchors, bracing, rope joints, tarp fixings, insulation and shelter examples. Includes the complete planning and kit specification sections.",
+    "note": "General emergency-shelter guidance, not a structural assessment of a building or a blast-protection design. Section search is available. This PDF has an unusable text encoding, so its page images are the reading source.",
+    "section_search_only": true,
+    "sections": [
+      [
+        4,
+        "Complete contents"
+      ],
+      [
+        30,
+        "Planning and distribution checklists"
+      ],
+      [
+        34,
+        "Construction and repair: start"
+      ],
+      [
+        37,
+        "Site, drainage and floor"
+      ],
+      [
+        40,
+        "Anchors and foundations"
+      ],
+      [
+        43,
+        "Frame and bracing"
+      ],
+      [
+        46,
+        "Rope joints and lashings"
+      ],
+      [
+        48,
+        "Nailed joints"
+      ],
+      [
+        49,
+        "Coverings"
+      ],
+      [
+        50,
+        "Fix tarp to a frame"
+      ],
+      [
+        51,
+        "Fix tarp to rope and join sheets"
+      ],
+      [
+        52,
+        "Insulation"
+      ],
+      [
+        53,
+        "Construction checklist"
+      ],
+      [
+        56,
+        "Shelter examples"
+      ],
+      [
+        64,
+        "Kit contents and specifications"
+      ]
+    ],
+    "url": "https://www.ifrc.org/sites/default/files/2021-08/IFRC_shelter-kit-guidelines-EN-LR.pdf",
+    "sha256": "a9bf47ee8ba786d988f665e17e1c312df682cff6b0822503320cf4fcfc4e2a2c",
+    "bytes": 1232104,
+    "pages": 88,
+    "distribution": "Download from the publisher for personal offline use. Publisher terms apply. Not covered by the software MIT licence.",
+    "source_page": "https://www.ifrc.org/sites/default/files/2021-08/IFRC_shelter-kit-guidelines-EN-LR.pdf"
+  },
+  {
+    "id": "os-navigation",
+    "title": "Read a map and use a compass",
+    "original": "Map Reading: From the Beginner to the Advanced Map Reader",
+    "author": "Ordnance Survey",
+    "publisher": "Ordnance Survey",
+    "edition": "2023 file edition",
+    "region": "UK",
+    "language": "English",
+    "categories": [
+      "transport",
+      "bushcraft"
+    ],
+    "start": 7,
+    "scope": "Full illustrated booklet: grid references, contours, bearings, relocating, pacing, night navigation and poor visibility. Two printed pages share each PDF sheet.",
+    "note": "OS grid references and symbols describe OS maps. Your saved Switch maps use a different map style and do not supply live GPS, compass readings or OS contour mapping.",
+    "sections": [
+      [
+        2,
+        "Contents and map choice"
+      ],
+      [
+        3,
+        "Symbols and scale"
+      ],
+      [
+        5,
+        "Grid references"
+      ],
+      [
+        6,
+        "Contours and relief"
+      ],
+      [
+        7,
+        "Compass parts"
+      ],
+      [
+        8,
+        "Take and follow a bearing"
+      ],
+      [
+        9,
+        "Relocate using landmarks"
+      ],
+      [
+        10,
+        "Triangulation and slope"
+      ],
+      [
+        12,
+        "Pacing, distance and contours"
+      ],
+      [
+        13,
+        "Walking a bearing and getting lost"
+      ],
+      [
+        14,
+        "Night and poor-visibility navigation"
+      ]
+    ],
+    "url": "https://shop.osmaps.com/content/downloads/map%20reading%20booklet-a5.pdf",
+    "sha256": "d9f3b54e640847b40cc864c22b2ce9e2632bbdb8d6cea3e8838fefd4514cfbeb",
+    "bytes": 8502117,
+    "pages": 15,
+    "distribution": "Download from the publisher for personal offline use. Publisher terms apply. Not covered by the software MIT licence.",
+    "source_page": "https://shop.osmaps.com/content/downloads/map%20reading%20booklet-a5.pdf"
+  },
+  {
+    "id": "scouts-fire",
+    "title": "Light, use and extinguish a campfire",
+    "original": "Scout Survival Skills: Building a Fire",
+    "author": "The Scout Association, with Austin Lill, Terry Longhurst and Scout groups",
+    "publisher": "Scouts UK",
+    "edition": "2015",
+    "region": "UK",
+    "language": "English",
+    "categories": [
+      "cooking",
+      "bushcraft"
+    ],
+    "start": 4,
+    "scope": "Complete illustrated guide: site preparation, tinder, kindling, lighting methods, fire layouts, wood selection and extinguishing.",
+    "note": "Read the fire-site and extinguishing pages before a build. Local fire restrictions and the legal notes in this 2015 edition are not live information.",
+    "sections": [
+      [
+        3,
+        "Fire hazards and preparation"
+      ],
+      [
+        4,
+        "Prepare the site and extinguish"
+      ],
+      [
+        5,
+        "Tinder, kindling and fuel"
+      ],
+      [
+        6,
+        "Lighting methods"
+      ],
+      [
+        7,
+        "Lighting tips and tricks"
+      ],
+      [
+        9,
+        "Light a fire: step by step"
+      ],
+      [
+        10,
+        "Choose a fire layout"
+      ],
+      [
+        13,
+        "Wood burning properties"
+      ]
+    ],
+    "url": "https://cms.scouts.org.uk/media/3590/building-a-fire-activities.pdf",
+    "sha256": "d2aa2f64148aa2eec8e9b3d10030ab448dd51a93adb6153760abe18e998e8510",
+    "bytes": 685243,
+    "pages": 14,
+    "distribution": "Download from the publisher for personal offline use. Publisher terms apply. Not covered by the software MIT licence.",
+    "source_page": "https://cms.scouts.org.uk/media/3590/building-a-fire-activities.pdf"
+  },
+  {
+    "id": "plantlife-id",
+    "title": "UK plants and fungi: illustrated identification",
+    "original": "Identification Guide: A Guide to Wild Plants, Fungi, Lichens and Trees",
+    "author": "Plantlife expert team",
+    "publisher": "Plantlife",
+    "edition": "2024",
+    "region": "UK",
+    "language": "English",
+    "categories": [
+      "forage",
+      "mushrooms"
+    ],
+    "start": 7,
+    "scope": "Complete 128-species introduction, with original photographs, habitat descriptions, plant-part diagrams and a species index.",
+    "note": "An identification and nature guide, not an edible-plant or mushroom-foraging manual. It does not supply the complete toxic-lookalike keys and preparation instructions needed for choosing wild food.",
+    "sections": [
+      [
+        4,
+        "How to use the guide"
+      ],
+      [
+        5,
+        "Plain explanations of botanical terms"
+      ],
+      [
+        7,
+        "Plant parts diagram"
+      ],
+      [
+        8,
+        "Leaf shapes and arrangements"
+      ],
+      [
+        9,
+        "Mushroom parts diagram"
+      ],
+      [
+        10,
+        "Grassland species"
+      ],
+      [
+        32,
+        "Woodland species"
+      ],
+      [
+        53,
+        "Town and city species"
+      ],
+      [
+        63,
+        "Species index"
+      ],
+      [
+        67,
+        "Further identification books"
+      ]
+    ],
+    "url": "https://www.plantlife.org.uk/wp-content/uploads/2024/06/WEB-Plantlife-ID-Guide.pdf",
+    "sha256": "bfec3ad0d8abaaffab9f5a474949f56ec2997a6842cf6a30a99e6ca54adf571b",
+    "bytes": 4972699,
+    "pages": 68,
+    "distribution": "Download from the publisher for personal offline use. Publisher terms apply. Not covered by the software MIT licence.",
+    "source_page": "https://www.plantlife.org.uk/wp-content/uploads/2024/06/WEB-Plantlife-ID-Guide.pdf"
+  },
+  {
+    "id": "aub-plants",
+    "title": "Lebanon: Plants and People",
+    "original": "Plants and People: Ethnobotanical Knowledge from Lebanon",
+    "author": "Rami Zurayk and Salma N. Talhouk. Art: Cynthia Gharios. Photos: Khaled Sleem",
+    "publisher": "American University of Beirut",
+    "edition": "2009",
+    "region": "Lebanon",
+    "language": "English + Arabic",
+    "categories": [
+      "forage",
+      "food"
+    ],
+    "start": 4,
+    "scope": "The complete bilingual AUB book, preserving its botanical photographs, drawings, local names and traditional plant-use accounts.",
+    "note": "A regional plant-use reference, not a complete edible-species key. Historical medicinal claims are presented by the authors as traditional knowledge, not current treatment protocols. In particular, its dwarf elder is not the common edible elder.",
+    "sections": [
+      [
+        4,
+        "Contents and plant names"
+      ],
+      [
+        7,
+        "Hollyhock / khatmiyyeh"
+      ],
+      [
+        11,
+        "Asparagus"
+      ],
+      [
+        15,
+        "Hawthorn"
+      ],
+      [
+        23,
+        "Prickly juniper"
+      ],
+      [
+        27,
+        "Myrtle"
+      ],
+      [
+        31,
+        "Wild pistachio"
+      ],
+      [
+        33,
+        "Plantain"
+      ],
+      [
+        35,
+        "Mahaleb"
+      ],
+      [
+        37,
+        "Sumac"
+      ],
+      [
+        39,
+        "Sage"
+      ],
+      [
+        43,
+        "Dwarf elder: traditional account"
+      ],
+      [
+        45,
+        "Nettles"
+      ],
+      [
+        49,
+        "Arabic index"
+      ]
+    ],
+    "url": "https://www.aub.edu.lb/natureconservation/Documents/Plant%20%26%20People%20Book.pdf",
+    "sha256": "d994affaca8ee074b3893f985888cd9a6ff6eb617f731ada1bf971b4b88534c5",
+    "bytes": 10621304,
+    "pages": 52,
+    "distribution": "Download from the publisher for personal offline use. Publisher terms apply. Not covered by the software MIT licence.",
+    "source_page": "https://www.aub.edu.lb/natureconservation/Documents/Plant%20%26%20People%20Book.pdf"
+  },
+  {
+    "id": "bna-fungi",
+    "title": "UK mushrooms: learn the identification features",
+    "original": "Basic Guide to Identifying Fungi",
+    "author": "Pauline Rutherford. Includes images credited to John Harris",
+    "publisher": "British Naturalists Association",
+    "edition": "2021",
+    "region": "UK",
+    "language": "English",
+    "categories": [
+      "mushrooms",
+      "forage"
+    ],
+    "start": 2,
+    "scope": "Original annotated photographs and drawings explain gills, pores, cap shapes, stem bases and spore prints, with selected common species.",
+    "note": "Identification training, not a mushroom edibility key. The saved library still needs a full regional mushroom-foraging manual.",
+    "sections": [
+      [
+        1,
+        "Where to look and what to record"
+      ],
+      [
+        2,
+        "Gills, pores and mushroom anatomy"
+      ],
+      [
+        3,
+        "Cap, gill and stem shapes"
+      ],
+      [
+        4,
+        "Spore prints and species"
+      ],
+      [
+        5,
+        "More common species"
+      ]
+    ],
+    "url": "https://bna-naturalists.org/wp-content/uploads/2021/02/Basic-Guide-to-Identifying-Fungi.pdf",
+    "sha256": "9692d5ef232135dd34813534f0c97892e95657bf2baa7f6a908054d0fc4405e9",
+    "bytes": 1979387,
+    "pages": 6,
+    "distribution": "Download from the publisher for personal offline use. Publisher terms apply. Not covered by the software MIT licence.",
+    "source_page": "https://bna-naturalists.org/wp-content/uploads/2021/02/Basic-Guide-to-Identifying-Fungi.pdf"
+  },
+  {
+    "id": "aub-compost",
+    "title": "Lebanon: build and use a household composter",
+    "original": "Home Composting Made Cheap, Simple and Fun",
+    "author": "AUB Nature Conservation Center. Engineering drawings: Anwar Al Shami",
+    "publisher": "American University of Beirut",
+    "edition": "2018",
+    "region": "Lebanon",
+    "language": "English",
+    "categories": [
+      "farming",
+      "sanitation",
+      "building"
+    ],
+    "start": 3,
+    "scope": "A complete operating guide with troubleshooting, a bill of materials and dimensioned drawings for a barrel composter.",
+    "note": "The physical instructions and drawings are offline. The optional data-sharing website mentioned in the original is an external service.",
+    "sections": [
+      [
+        2,
+        "How the composter works"
+      ],
+      [
+        3,
+        "Inputs, layers and mature compost"
+      ],
+      [
+        4,
+        "Monitor the compost"
+      ],
+      [
+        7,
+        "Fix smells and other problems"
+      ],
+      [
+        8,
+        "Build it: dimensions and parts"
+      ],
+      [
+        9,
+        "Assembly drawing"
+      ],
+      [
+        10,
+        "Individual component drawings"
+      ],
+      [
+        19,
+        "Publication credits"
+      ]
+    ],
+    "url": "https://www.aub.edu.lb/natureconservation/Documents/Household%20Composting%20Manual.pdf",
+    "sha256": "8111319905eb1b81cca7049953c30130d39fa5af6a8657f15356593112d90956",
+    "bytes": 2231727,
+    "pages": 19,
+    "distribution": "Download from the publisher for personal offline use. Publisher terms apply. Not covered by the software MIT licence.",
+    "source_page": "https://www.aub.edu.lb/natureconservation/Documents/Household%20Composting%20Manual.pdf"
+  },
+  {
+    "id": "aub-nursery",
+    "title": "Lebanon: grow native trees and shrubs",
+    "original": "National Guidelines for Nursery Management: Native Trees and Shrubs",
+    "author": "Khaled Sleem, Karim Bouazza and Salma N. Talhouk. Reviewed by Anthony Davis and Amy Ross-Davis",
+    "publisher": "AUB / Lebanon Reforestation Initiative",
+    "edition": "2018",
+    "region": "Lebanon",
+    "language": "English, with bilingual species plates",
+    "categories": [
+      "farming"
+    ],
+    "start": 13,
+    "scope": "Complete nursery manual adopted by the Lebanese Ministry of Agriculture. Seed collection, extraction, germination, containers, irrigation and native-species photographs. Many PDF sheets contain two or more printed pages.",
+    "note": "A propagation manual, not an edibility guide. Some specialist seed treatments require equipment and training. Use the author’s scope and precautions for the selected method.",
+    "sections": [
+      [
+        4,
+        "Contents"
+      ],
+      [
+        9,
+        "Nursery site and water"
+      ],
+      [
+        13,
+        "Collect seeds"
+      ],
+      [
+        14,
+        "Extract and clean seeds"
+      ],
+      [
+        17,
+        "Store seeds"
+      ],
+      [
+        18,
+        "Dormancy and seed treatments"
+      ],
+      [
+        21,
+        "Test water uptake"
+      ],
+      [
+        22,
+        "Propagate from cuttings"
+      ],
+      [
+        24,
+        "Choose growing media"
+      ],
+      [
+        27,
+        "Containers and sowing"
+      ],
+      [
+        29,
+        "Transplant seedlings"
+      ],
+      [
+        31,
+        "Irrigation"
+      ],
+      [
+        34,
+        "Fertilizer"
+      ],
+      [
+        39,
+        "Prune and sort seedlings"
+      ],
+      [
+        41,
+        "Pests and diseases"
+      ],
+      [
+        44,
+        "Native-species methods and plates"
+      ]
+    ],
+    "url": "https://www.aub.edu.lb/natureconservation/Documents/Nursery%20Management%20(english).pdf",
+    "sha256": "f050112fedb5907d4b1144dcea9c21c256c5b9e886b9b7455d520f247e98d4e4",
+    "bytes": 3214180,
+    "pages": 77,
+    "distribution": "Download from the publisher for personal offline use. Publisher terms apply. Not covered by the software MIT licence.",
+    "source_page": "https://www.aub.edu.lb/natureconservation/Documents/Nursery%20Management%20(english).pdf"
+  },
+  {
+    "id": "hse-first-aid",
+    "title": "First aid: immediate response",
+    "original": "First aid: immediate response",
+    "publisher": "HSE",
+    "author": "Health and Safety Executive",
+    "edition": "2017",
+    "region": "UK",
+    "language": "English",
+    "categories": [
+      "health"
+    ],
+    "start": 1,
+    "pages": 4,
+    "scope": "Complete original four-page illustrated publication.",
+    "note": "Use the original edition within its stated scope. This is a saved publication, not live emergency guidance.",
+    "sections": [
+      [
+        1,
+        "Original page 1"
+      ],
+      [
+        2,
+        "Original page 2"
+      ],
+      [
+        3,
+        "Original page 3"
+      ],
+      [
+        4,
+        "Original page 4"
+      ]
+    ],
+    "url": "https://www.hse.gov.uk/pubns/indg347.pdf",
+    "source_page": "https://www.hse.gov.uk/pubns/indg347.htm",
+    "sha256": "cab692168f7f0b39b2a8fffe047dc05947e0301ebc77af355b423104465fca4d",
+    "bytes": 260440,
+    "distribution": "Downloaded separately from its publisher. Publisher terms apply. Not covered by the software MIT licence."
+  },
+  {
+    "id": "who-wash-07",
+    "title": "Technical note 7. Solid waste management in emergencies",
+    "original": "Technical note 7. Solid waste management in emergencies",
+    "publisher": "WHO / WEDC",
+    "author": "World Health Organization and Water, Engineering and Development Centre",
+    "edition": "2013",
+    "region": "International",
+    "language": "English",
+    "categories": [
+      "sanitation"
+    ],
+    "start": 1,
+    "pages": 4,
+    "scope": "Complete original four-page illustrated publication.",
+    "note": "Use the original edition within its stated scope. This is a saved publication, not live emergency guidance.",
+    "sections": [
+      [
+        1,
+        "Original page 1"
+      ],
+      [
+        2,
+        "Original page 2"
+      ],
+      [
+        3,
+        "Original page 3"
+      ],
+      [
+        4,
+        "Original page 4"
+      ]
+    ],
+    "url": "https://cdn.who.int/media/docs/default-source/wash-documents/who-tn-07-solid-waste-management-in-emergencies.pdf?sfvrsn=17d5009e_4",
+    "source_page": "https://www.who.int/teams/environment-climate-change-and-health/water-sanitation-and-health/environmental-health-in-emergencies/technical-notes-on-wash-in-emergencies",
+    "sha256": "24c9b1b046eeec2c078c6b7d70899aec9cb4ca0949a0cc602c1cc3db44d79eb0",
+    "bytes": 1724274,
+    "distribution": "Downloaded separately from its publisher. Publisher terms apply. Not covered by the software MIT licence."
+  },
+  {
+    "id": "who-wash-10",
+    "title": "Technical note 10. Hygiene promotion in emergencies",
+    "original": "Technical note 10. Hygiene promotion in emergencies",
+    "publisher": "WHO / WEDC",
+    "author": "World Health Organization and Water, Engineering and Development Centre",
+    "edition": "2013",
+    "region": "International",
+    "language": "English",
+    "categories": [
+      "sanitation"
+    ],
+    "start": 1,
+    "pages": 4,
+    "scope": "Complete original four-page illustrated publication.",
+    "note": "Use the original edition within its stated scope. This is a saved publication, not live emergency guidance.",
+    "sections": [
+      [
+        1,
+        "Original page 1"
+      ],
+      [
+        2,
+        "Original page 2"
+      ],
+      [
+        3,
+        "Original page 3"
+      ],
+      [
+        4,
+        "Original page 4"
+      ]
+    ],
+    "url": "https://cdn.who.int/media/docs/default-source/wash-documents/who-tn-10-hygiene-promotion-in-emergencies.pdf?sfvrsn=978aac2f_4",
+    "source_page": "https://www.who.int/teams/environment-climate-change-and-health/water-sanitation-and-health/environmental-health-in-emergencies/technical-notes-on-wash-in-emergencies",
+    "sha256": "9e5ee22dd2ab888745bac2755714bee956463a7efcaa0285098e82cd6ad3fde2",
+    "bytes": 1029606,
+    "distribution": "Downloaded separately from its publisher. Publisher terms apply. Not covered by the software MIT licence."
+  },
+  {
+    "id": "who-wash-13",
+    "title": "Technical note 13. Planning for excreta disposal in emergencies",
+    "original": "Technical note 13. Planning for excreta disposal in emergencies",
+    "publisher": "WHO / WEDC",
+    "author": "World Health Organization and Water, Engineering and Development Centre",
+    "edition": "2013",
+    "region": "International",
+    "language": "English",
+    "categories": [
+      "sanitation"
+    ],
+    "start": 1,
+    "pages": 4,
+    "scope": "Complete original four-page illustrated publication.",
+    "note": "Use the original edition within its stated scope. This is a saved publication, not live emergency guidance.",
+    "sections": [
+      [
+        1,
+        "Original page 1"
+      ],
+      [
+        2,
+        "Original page 2"
+      ],
+      [
+        3,
+        "Original page 3"
+      ],
+      [
+        4,
+        "Original page 4"
+      ]
+    ],
+    "url": "https://cdn.who.int/media/docs/default-source/wash-documents/who-tn-13-planning-for-excreta-disposal-in-emergencies.pdf?sfvrsn=612c56d1_4",
+    "source_page": "https://www.who.int/teams/environment-climate-change-and-health/water-sanitation-and-health/environmental-health-in-emergencies/technical-notes-on-wash-in-emergencies",
+    "sha256": "3750673ec616168a76ae3588b0ee22eba6767eb7dccceb2c212e14be53818e5c",
+    "bytes": 889018,
+    "distribution": "Downloaded separately from its publisher. Publisher terms apply. Not covered by the software MIT licence."
+  },
+  {
+    "id": "who-wash-14",
+    "title": "Technical note 14. Technical options for excreta disposal in emergencies",
+    "original": "Technical note 14. Technical options for excreta disposal in emergencies",
+    "publisher": "WHO / WEDC",
+    "author": "World Health Organization and Water, Engineering and Development Centre",
+    "edition": "2013",
+    "region": "International",
+    "language": "English",
+    "categories": [
+      "sanitation"
+    ],
+    "start": 1,
+    "pages": 4,
+    "scope": "Complete original four-page illustrated publication.",
+    "note": "Use the original edition within its stated scope. This is a saved publication, not live emergency guidance.",
+    "sections": [
+      [
+        1,
+        "Original page 1"
+      ],
+      [
+        2,
+        "Original page 2"
+      ],
+      [
+        3,
+        "Original page 3"
+      ],
+      [
+        4,
+        "Original page 4"
+      ]
+    ],
+    "url": "https://cdn.who.int/media/docs/default-source/wash-documents/who-tn-14-technical-options-for-excreta-disposal.pdf?sfvrsn=a3eed58f_4",
+    "source_page": "https://www.who.int/teams/environment-climate-change-and-health/water-sanitation-and-health/environmental-health-in-emergencies/technical-notes-on-wash-in-emergencies",
+    "sha256": "2f13380d9a9d63a0aeb4320038744b5c4088ab070b10fef18b412080a85ffdd2",
+    "bytes": 989473,
+    "distribution": "Downloaded separately from its publisher. Publisher terms apply. Not covered by the software MIT licence."
+  },
+  {
+    "id": "who-wash-08",
+    "title": "Technical note 8. Disposal of dead bodies in emergency conditions",
+    "original": "Technical note 8. Disposal of dead bodies in emergency conditions",
+    "publisher": "WHO / WEDC",
+    "author": "World Health Organization and Water, Engineering and Development Centre",
+    "edition": "2013",
+    "region": "International",
+    "language": "English",
+    "categories": [
+      "sanitation"
+    ],
+    "start": 1,
+    "pages": 4,
+    "scope": "Complete original four-page illustrated publication.",
+    "note": "Use the original edition within its stated scope. This is a saved publication, not live emergency guidance.",
+    "sections": [
+      [
+        1,
+        "Original page 1"
+      ],
+      [
+        2,
+        "Original page 2"
+      ],
+      [
+        3,
+        "Original page 3"
+      ],
+      [
+        4,
+        "Original page 4"
+      ]
+    ],
+    "url": "https://cdn.who.int/media/docs/default-source/wash-documents/who-tn-08-disposal-of-dead-bodies.pdf?sfvrsn=530b5835_4",
+    "source_page": "https://www.who.int/teams/environment-climate-change-and-health/water-sanitation-and-health/environmental-health-in-emergencies/technical-notes-on-wash-in-emergencies",
+    "sha256": "f5719f8e43dbe38b152919b4119ef3e0b204a6bfb07f33f6cd97cbffa5f538d4",
+    "bytes": 1595546,
+    "distribution": "Downloaded separately from its publisher. Publisher terms apply. Not covered by the software MIT licence."
+  },
+  {
+    "id": "who-wash-05",
+    "title": "Technical note 5. Emergency treatment of drinking-water at the point of use",
+    "original": "Technical note 5. Emergency treatment of drinking-water at the point of use",
+    "publisher": "WHO / WEDC",
+    "author": "World Health Organization and Water, Engineering and Development Centre",
+    "edition": "2013",
+    "region": "International",
+    "language": "English",
+    "categories": [
+      "water"
+    ],
+    "start": 1,
+    "pages": 4,
+    "scope": "Complete original four-page illustrated publication.",
+    "note": "Use the original edition within its stated scope. This is a saved publication, not live emergency guidance.",
+    "sections": [
+      [
+        1,
+        "Original page 1"
+      ],
+      [
+        2,
+        "Original page 2"
+      ],
+      [
+        3,
+        "Original page 3"
+      ],
+      [
+        4,
+        "Original page 4"
+      ]
+    ],
+    "url": "https://cdn.who.int/media/docs/default-source/wash-documents/who-tn-05-emergency-treatment-of-drinking-water-at-the-point-of-use.pdf?sfvrsn=99f943f6_4",
+    "source_page": "https://www.who.int/teams/environment-climate-change-and-health/water-sanitation-and-health/environmental-health-in-emergencies/technical-notes-on-wash-in-emergencies",
+    "sha256": "49cb198f80464c6245c6bf6c99e3b9d14f8c6ae75b97bf9add8c7daacb503c3e",
+    "bytes": 1383781,
+    "distribution": "Downloaded separately from its publisher. Publisher terms apply. Not covered by the software MIT licence."
+  },
+  {
+    "id": "who-wash-12",
+    "title": "Technical note 12. Delivering safe water by tanker",
+    "original": "Technical note 12. Delivering safe water by tanker",
+    "publisher": "WHO / WEDC",
+    "author": "World Health Organization and Water, Engineering and Development Centre",
+    "edition": "2013",
+    "region": "International",
+    "language": "English",
+    "categories": [
+      "water"
+    ],
+    "start": 1,
+    "pages": 4,
+    "scope": "Complete original four-page illustrated publication.",
+    "note": "Use the original edition within its stated scope. This is a saved publication, not live emergency guidance.",
+    "sections": [
+      [
+        1,
+        "Original page 1"
+      ],
+      [
+        2,
+        "Original page 2"
+      ],
+      [
+        3,
+        "Original page 3"
+      ],
+      [
+        4,
+        "Original page 4"
+      ]
+    ],
+    "url": "https://cdn.who.int/media/docs/default-source/wash-documents/who-tn-12-delivering-safe-water-by-tanker.pdf?sfvrsn=26737f0_4",
+    "source_page": "https://www.who.int/teams/environment-climate-change-and-health/water-sanitation-and-health/environmental-health-in-emergencies/technical-notes-on-wash-in-emergencies",
+    "sha256": "53455e447f7fb5435fe5cb0bf51ede4e586942a79ad4bdbf11d9fc8f7d300b62",
+    "bytes": 1406238,
+    "distribution": "Downloaded separately from its publisher. Publisher terms apply. Not covered by the software MIT licence."
+  },
+  {
+    "id": "who-wash-15",
+    "title": "Technical note 15. Cleaning wells after seawater flooding",
+    "original": "Technical note 15. Cleaning wells after seawater flooding",
+    "publisher": "WHO / WEDC",
+    "author": "World Health Organization and Water, Engineering and Development Centre",
+    "edition": "2013",
+    "region": "International",
+    "language": "English",
+    "categories": [
+      "water"
+    ],
+    "start": 1,
+    "pages": 4,
+    "scope": "Complete original four-page illustrated publication.",
+    "note": "Use the original edition within its stated scope. This is a saved publication, not live emergency guidance.",
+    "sections": [
+      [
+        1,
+        "Original page 1"
+      ],
+      [
+        2,
+        "Original page 2"
+      ],
+      [
+        3,
+        "Original page 3"
+      ],
+      [
+        4,
+        "Original page 4"
+      ]
+    ],
+    "url": "https://cdn.who.int/media/docs/default-source/wash-documents/who-tn-15-cleaning-wells-after-seawater-flooding.pdf?sfvrsn=83714e53_4",
+    "source_page": "https://www.who.int/teams/environment-climate-change-and-health/water-sanitation-and-health/environmental-health-in-emergencies/technical-notes-on-wash-in-emergencies",
+    "sha256": "68c00561d5ca4479d273b7984dd9fa49ca97d39b6f620e0000e1bc7a0a988fd6",
+    "bytes": 1370178,
+    "distribution": "Downloaded separately from its publisher. Publisher terms apply. Not covered by the software MIT licence."
+  },
+  {
+    "id": "who-wash-02",
+    "title": "Technical note 2. Cleaning and disinfecting borehole",
+    "original": "Technical note 2. Cleaning and disinfecting borehole",
+    "publisher": "WHO / WEDC",
+    "author": "World Health Organization and Water, Engineering and Development Centre",
+    "edition": "2013",
+    "region": "International",
+    "language": "English",
+    "categories": [
+      "water"
+    ],
+    "start": 1,
+    "pages": 4,
+    "scope": "Complete original four-page illustrated publication.",
+    "note": "Use the original edition within its stated scope. This is a saved publication, not live emergency guidance.",
+    "sections": [
+      [
+        1,
+        "Original page 1"
+      ],
+      [
+        2,
+        "Original page 2"
+      ],
+      [
+        3,
+        "Original page 3"
+      ],
+      [
+        4,
+        "Original page 4"
+      ]
+    ],
+    "url": "https://cdn.who.int/media/docs/default-source/wash-documents/who-tn-02-cleaning-and-disinfecting-boreholes.pdf?sfvrsn=5922a413_4",
+    "source_page": "https://www.who.int/teams/environment-climate-change-and-health/water-sanitation-and-health/environmental-health-in-emergencies/technical-notes-on-wash-in-emergencies",
+    "sha256": "633a8feb3de0e5e3876d81c0791b37d2f732217a681b1a0dafe871718115e7a3",
+    "bytes": 763538,
+    "distribution": "Downloaded separately from its publisher. Publisher terms apply. Not covered by the software MIT licence."
+  },
+  {
+    "id": "who-wash-03",
+    "title": "Technical note 3. Cleaning and disinfecting water storage tanks and tankers",
+    "original": "Technical note 3. Cleaning and disinfecting water storage tanks and tankers",
+    "publisher": "WHO / WEDC",
+    "author": "World Health Organization and Water, Engineering and Development Centre",
+    "edition": "2013",
+    "region": "International",
+    "language": "English",
+    "categories": [
+      "water"
+    ],
+    "start": 1,
+    "pages": 4,
+    "scope": "Complete original four-page illustrated publication.",
+    "note": "Use the original edition within its stated scope. This is a saved publication, not live emergency guidance.",
+    "sections": [
+      [
+        1,
+        "Original page 1"
+      ],
+      [
+        2,
+        "Original page 2"
+      ],
+      [
+        3,
+        "Original page 3"
+      ],
+      [
+        4,
+        "Original page 4"
+      ]
+    ],
+    "url": "https://cdn.who.int/media/docs/default-source/wash-documents/who-tn-03-cleaning-and-disinfecting-water-storage-tanks-and-tankers.pdf?sfvrsn=394020f2_4",
+    "source_page": "https://www.who.int/teams/environment-climate-change-and-health/water-sanitation-and-health/environmental-health-in-emergencies/technical-notes-on-wash-in-emergencies",
+    "sha256": "e196550b915e8029df589cdb85e97e37626365618c3353fc0818b205ec88df25",
+    "bytes": 1005467,
+    "distribution": "Downloaded separately from its publisher. Publisher terms apply. Not covered by the software MIT licence."
+  },
+  {
+    "id": "who-wash-06",
+    "title": "Technical note 6. Rehabilitating water treatment works after an emergency",
+    "original": "Technical note 6. Rehabilitating water treatment works after an emergency",
+    "publisher": "WHO / WEDC",
+    "author": "World Health Organization and Water, Engineering and Development Centre",
+    "edition": "2013",
+    "region": "International",
+    "language": "English",
+    "categories": [
+      "water"
+    ],
+    "start": 1,
+    "pages": 4,
+    "scope": "Complete original four-page illustrated publication.",
+    "note": "Use the original edition within its stated scope. This is a saved publication, not live emergency guidance.",
+    "sections": [
+      [
+        1,
+        "Original page 1"
+      ],
+      [
+        2,
+        "Original page 2"
+      ],
+      [
+        3,
+        "Original page 3"
+      ],
+      [
+        4,
+        "Original page 4"
+      ]
+    ],
+    "url": "https://cdn.who.int/media/docs/default-source/wash-documents/who-tn-06-rehabilitating-water-treatment-works-after-an-emergency.pdf?sfvrsn=45c6506c_4",
+    "source_page": "https://www.who.int/teams/environment-climate-change-and-health/water-sanitation-and-health/environmental-health-in-emergencies/technical-notes-on-wash-in-emergencies",
+    "sha256": "b74008ff5e8e8622fbe9aef06623a6a6ef053df5571b5c499075cac102b38f4b",
+    "bytes": 854531,
+    "distribution": "Downloaded separately from its publisher. Publisher terms apply. Not covered by the software MIT licence."
+  },
+  {
+    "id": "who-wash-01",
+    "title": "Technical note 1. Cleaning and disinfecting wells",
+    "original": "Technical note 1. Cleaning and disinfecting wells",
+    "publisher": "WHO / WEDC",
+    "author": "World Health Organization and Water, Engineering and Development Centre",
+    "edition": "2013",
+    "region": "International",
+    "language": "English",
+    "categories": [
+      "water"
+    ],
+    "start": 1,
+    "pages": 4,
+    "scope": "Complete original four-page illustrated publication.",
+    "note": "Use the original edition within its stated scope. This is a saved publication, not live emergency guidance.",
+    "sections": [
+      [
+        1,
+        "Original page 1"
+      ],
+      [
+        2,
+        "Original page 2"
+      ],
+      [
+        3,
+        "Original page 3"
+      ],
+      [
+        4,
+        "Original page 4"
+      ]
+    ],
+    "url": "https://cdn.who.int/media/docs/default-source/wash-documents/who-tn-01-cleaning-and-disinfecting-wells.pdf?sfvrsn=9210d296_4",
+    "source_page": "https://www.who.int/teams/environment-climate-change-and-health/water-sanitation-and-health/environmental-health-in-emergencies/technical-notes-on-wash-in-emergencies",
+    "sha256": "5ce6c4f8a1dd1e67487bd5ca40ee47bd63d1c0c664e8861efb7a6258ccb50e9f",
+    "bytes": 894602,
+    "distribution": "Downloaded separately from its publisher. Publisher terms apply. Not covered by the software MIT licence."
+  },
+  {
+    "id": "who-wash-11",
+    "title": "Technical note 11. Measuring chlorine levels in water supplies",
+    "original": "Technical note 11. Measuring chlorine levels in water supplies",
+    "publisher": "WHO / WEDC",
+    "author": "World Health Organization and Water, Engineering and Development Centre",
+    "edition": "2013",
+    "region": "International",
+    "language": "English",
+    "categories": [
+      "water"
+    ],
+    "start": 1,
+    "pages": 4,
+    "scope": "Complete original four-page illustrated publication.",
+    "note": "Use the original edition within its stated scope. This is a saved publication, not live emergency guidance.",
+    "sections": [
+      [
+        1,
+        "Original page 1"
+      ],
+      [
+        2,
+        "Original page 2"
+      ],
+      [
+        3,
+        "Original page 3"
+      ],
+      [
+        4,
+        "Original page 4"
+      ]
+    ],
+    "url": "https://cdn.who.int/media/docs/default-source/wash-documents/who-tn-11-measuring-chlorine-levels-in-water-supplies.pdf?sfvrsn=616c5e2a_4",
+    "source_page": "https://www.who.int/teams/environment-climate-change-and-health/water-sanitation-and-health/environmental-health-in-emergencies/technical-notes-on-wash-in-emergencies",
+    "sha256": "633d659375b7c339c94707c82c3cad1ff4da1be317963c136869f027a468c5c3",
+    "bytes": 1338767,
+    "distribution": "Downloaded separately from its publisher. Publisher terms apply. Not covered by the software MIT licence."
+  },
+  {
+    "id": "who-wash-04",
+    "title": "Technical note 4. Rehabilitating small-scale piped water distribution systems",
+    "original": "Technical note 4. Rehabilitating small-scale piped water distribution systems",
+    "publisher": "WHO / WEDC",
+    "author": "World Health Organization and Water, Engineering and Development Centre",
+    "edition": "2013",
+    "region": "International",
+    "language": "English",
+    "categories": [
+      "water"
+    ],
+    "start": 1,
+    "pages": 4,
+    "scope": "Complete original four-page illustrated publication.",
+    "note": "Use the original edition within its stated scope. This is a saved publication, not live emergency guidance.",
+    "sections": [
+      [
+        1,
+        "Original page 1"
+      ],
+      [
+        2,
+        "Original page 2"
+      ],
+      [
+        3,
+        "Original page 3"
+      ],
+      [
+        4,
+        "Original page 4"
+      ]
+    ],
+    "url": "https://cdn.who.int/media/docs/default-source/wash-documents/who-tn-04-rehabilitating-small-scale-piped-water-distribution-systems.pdf?sfvrsn=7b07d9f6_4",
+    "source_page": "https://www.who.int/teams/environment-climate-change-and-health/water-sanitation-and-health/environmental-health-in-emergencies/technical-notes-on-wash-in-emergencies",
+    "sha256": "28f9ceaceebe3c85bbb33e08f73bb061485b4753473d562985f77c018cf0c52e",
+    "bytes": 860621,
+    "distribution": "Downloaded separately from its publisher. Publisher terms apply. Not covered by the software MIT licence."
+  },
+  {
+    "id": "who-wash-09",
+    "title": "Technical note 9. How much water is needed in emergencies",
+    "original": "Technical note 9. How much water is needed in emergencies",
+    "publisher": "WHO / WEDC",
+    "author": "World Health Organization and Water, Engineering and Development Centre",
+    "edition": "2013",
+    "region": "International",
+    "language": "English",
+    "categories": [
+      "water"
+    ],
+    "start": 1,
+    "pages": 4,
+    "scope": "Complete original four-page illustrated publication.",
+    "note": "Use the original edition within its stated scope. This is a saved publication, not live emergency guidance.",
+    "sections": [
+      [
+        1,
+        "Original page 1"
+      ],
+      [
+        2,
+        "Original page 2"
+      ],
+      [
+        3,
+        "Original page 3"
+      ],
+      [
+        4,
+        "Original page 4"
+      ]
+    ],
+    "url": "https://cdn.who.int/media/docs/default-source/wash-documents/who-tn-09-how-much-water-is-needed.pdf?sfvrsn=1e876b2a_6",
+    "source_page": "https://www.who.int/teams/environment-climate-change-and-health/water-sanitation-and-health/environmental-health-in-emergencies/technical-notes-on-wash-in-emergencies",
+    "sha256": "3c3f4f1e1e22e42cb2d3292247c319c03d4270a497008617e54725ecb0281e1f",
+    "bytes": 895946,
+    "distribution": "Downloaded separately from its publisher. Publisher terms apply. Not covered by the software MIT licence."
+  }
+]

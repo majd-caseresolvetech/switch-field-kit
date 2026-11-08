@@ -1,0 +1,18 @@
+import * as maplibregl from '/map-assets/maplibre-gl.mjs';
+const $=s=>document.querySelector(s),status=$('#status');
+let map,day=false,selected,marker;
+try {
+ const library=await(await fetch('/api/library')).json(),maps=library.maps;
+ if(!maps.length)throw Error('No map registered.');
+ const protocol=new pmtiles.Protocol();maplibregl.addProtocol('pmtiles',protocol.tile);maplibregl.setWorkerCount(1);
+ for(const item of maps){const o=document.createElement('option');o.value=item.id;o.textContent=item.name;$('#area').append(o);}
+ function style(item){const base=basemaps.namedFlavor(day?'light':'dark');const flavor=day?base:{...base,background:'#09180f',earth:'#14291b',park_a:'#1c3924',park_b:'#21432a',wood_a:'#1c3924',wood_b:'#21432a',water:'#17404e',buildings:'#34513c',boundaries:'#94ad89',minor_a:'#82967b',minor_b:'#778c70',other:'#667e61',minor_service:'#63775d',major:'#bcc99a',highway:'#dfcf8d',roads_label_minor:'#dfedce',roads_label_major:'#e4f3d5',roads_label_minor_halo:'#14291b',roads_label_major_halo:'#14291b',city_label:'#e1ffd1',city_label_halo:'#102418',country_label:'#d4ebc6',state_label:'#b3cba8',subplace_label:'#d4e9c9',subplace_label_halo:'#14291b',ocean_label:'#c2dfec'};return {version:8,glyphs:location.origin+'/map-assets/fonts/{fontstack}/{range}.pbf',sprite:location.origin+'/map-assets/sprites/'+(day?'light':'dark'),sources:{local:{type:'vector',url:'pmtiles://'+location.origin+'/map-data/'+item.id+'.pmtiles',bounds:item.bounds,attribution:'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors · <a href="https://protomaps.com">Protomaps</a>'}},layers:basemaps.layers('local',flavor,{lang:'en'})};}
+ selected=maps[0];map=new maplibregl.Map({container:'map',style:style(selected),bounds:selected.bounds,fitBoundsOptions:{padding:12,duration:0},maxZoom:selected.maxzoom+2,fadeDuration:0,refreshExpiredTiles:false,maxTileCacheSize:64,pitchWithRotate:false,dragRotate:false,renderWorldCopies:false});
+ window.fieldMap=map;map.addControl(new maplibregl.NavigationControl({showCompass:false}),'top-right');map.addControl(new maplibregl.ScaleControl({unit:'metric'}),'bottom-left');
+ function update(){const p=map.getCenter();status.textContent=selected.name+' · '+selected.edition+' · '+p.lat.toFixed(4)+', '+p.lng.toFixed(4)+(map.getZoom()>selected.maxzoom+.3?' · enlarged past saved detail':'')+' · no live position or routing';}
+ map.on('moveend',update);map.on('load',update);map.on('error',e=>{status.textContent='A saved map file could not load. Check its storage is mounted and run fieldkit map-tools. '+(e.error?.message||'');});
+ $('#area').onchange=()=>{selected=maps.find(m=>m.id===$('#area').value);map.setStyle(style(selected));map.setMaxZoom(selected.maxzoom+2);map.fitBounds(selected.bounds,{padding:12,duration:0});update();};
+ $('#day').onclick=()=>{day=!day;$('#day').textContent=day?'NIGHT MAP':'DAY MAP';map.setStyle(style(selected));};
+ $('#coordinates').onsubmit=e=>{e.preventDefault();const pair=$('#coordinate-input').value.match(/^\s*(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\s*$/);if(!pair){status.textContent='Enter decimal latitude, longitude. Example: 50.0755, 14.4378';return;}const lat=Number(pair[1]),lon=Number(pair[2]);if(Math.abs(lat)>85||Math.abs(lon)>180){status.textContent='Those coordinates are outside map limits.';return;}if(marker)marker.remove();marker=new maplibregl.Marker().setLngLat([lon,lat]).addTo(map);map.jumpTo({center:[lon,lat],zoom:Math.min(selected.maxzoom,14)});update();};
+ window.addEventListener('pagehide',()=>map.remove(),{once:true});
+}catch(e){status.textContent='Map viewer could not start: '+e.message+'. Run fieldkit map-tools.';}
