@@ -1,5 +1,18 @@
 # Verification
 
+## Version 0.1.2 native service fix
+
+Checked on 8 November 2026 on an ARM64 Switch with Python 3.6.9 and systemd 237:
+
+- All 17 automated tests passed on the device.
+- A real systemd service exposed a startup bug missed by the isolated installer tests: systemd 237 treats quotes in `WorkingDirectory` as literal path characters. Version 0.1.2 uses an environment variable for Python's module path instead.
+- The revised service started successfully with an app path and a configuration path containing spaces and percent signs. The test used the real user service manager and checked the HTTP health response before removing its temporary service.
+- Normal installation and service startup passed. Diagnostics verified all 27 saved original PDFs and the presence of their page images.
+- The reader registered the owner's 10 existing ZIM collections and six PMTiles archives without copying those large files. Its Kiwix endpoint responded, all books were present, and all six maps served valid byte-range responses.
+- The Hekate configuration checksum stayed unchanged. The original library remained available.
+
+This was an existing Ubuntu installation, not a fresh Noble installation or a test of every hardware variant. A complete reboot and long-duration battery life remain untested. Device-specific split-Wikipedia mounting is managed by the owner's existing setup, not by the public installer.
+
 ## Version 0.1.1 review
 
 Reviewed on 8 November 2026:
@@ -10,7 +23,7 @@ Reviewed on 8 November 2026:
 - Browser regression checks cover the new empty states, clipboard content and narrow layout. The GitHub Actions result for the exact commit records their outcome.
 - Release checks build the versioned ZIP and exclude personal files and downloaded publisher material. The new Hekate and Ubuntu guide is included.
 
-The physical Switch was not reachable during this review. The revised setup has not been rerun on that device or on a fresh Noble installation. The earlier ARM64 checks below remain the hardware evidence for 0.1.0, not a fresh hardware test of 0.1.1.
+The physical Switch was initially unreachable during this review. When it reconnected, a real service installation found the systemd 237 startup bug described above. Use 0.1.2 or later for that fix.
 
 ## Version 0.1.0 hardware and content checks
 

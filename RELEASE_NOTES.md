@@ -1,4 +1,12 @@
-# Switch Field Kit 0.1.1
+# Switch Field Kit 0.1.2
+
+Fixes startup on older Switchroot Ubuntu installations using systemd 237. That version interprets the quoted working-directory path in 0.1.1 literally and refuses to start the reader. The service now uses a quoted Python module path instead.
+
+Verified on an ARM64 Switch running Python 3.6.9, including a real service launched from paths containing spaces and percent signs. All 17 tests passed, and the installed reader served 27 original guides, 10 existing book collections and six existing map archives. These collections are the owner's test library and are not bundled with the release.
+
+If 0.1.1 reports an `Exec format error`, extract this release and run `bash setup.sh --no-guides` as your usual Ubuntu user. It replaces the app and service while retaining the separate library. No SD formatting or Ubuntu reinstall is needed.
+
+## Version 0.1.1
 
 This update makes a fresh installation easier to finish and recover when optional downloads fail.
 

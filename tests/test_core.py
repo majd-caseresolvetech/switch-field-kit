@@ -77,8 +77,8 @@ class CoreTests(TemporaryLibrary):
 
     def test_systemd_quoting_for_spaces_and_percent(self):
         unit = service_text(Path('/home/example user/100% library/app'))
-        self.assertIn('"/home/example user/100%% library/app"', unit)
-        self.assertIn('WorkingDirectory=', unit)
+        self.assertIn('Environment="PYTHONPATH=/home/example user/100%% library/app"', unit)
+        self.assertNotIn('WorkingDirectory=', unit)
         with self.assertRaises(ValueError):
             unit_quote('bad\npath')
 

@@ -26,7 +26,10 @@ def unit_quote(value):
     return '"'+value.replace('\\', '\\\\').replace('"', '\\"').replace('%', '%%')+'"'
 
 def service_text(app):
-    return '[Unit]\nDescription=Switch Field Kit offline library\n\n[Service]\nType=simple\nWorkingDirectory='+unit_quote(app)+'\nEnvironment='+unit_quote('FIELDKIT_CONFIG='+str(config_path().resolve()))+'\nExecStart='+unit_quote(sys.executable)+' -m fieldkit serve\nRestart=on-failure\nRestartSec=5\n\n[Install]\nWantedBy=default.target\n'
+    # systemd 237 treats quotes in WorkingDirectory as literal path characters.
+    # The app uses absolute paths, so a quoted environment value avoids that
+    # parser difference while also supporting spaces and percent signs.
+    return '[Unit]\nDescription=Switch Field Kit offline library\n\n[Service]\nType=simple\nEnvironment='+unit_quote('PYTHONPATH='+str(app))+'\nEnvironment='+unit_quote('FIELDKIT_CONFIG='+str(config_path().resolve()))+'\nExecStart='+unit_quote(sys.executable)+' -m fieldkit serve\nRestart=on-failure\nRestartSec=5\n\n[Install]\nWantedBy=default.target\n'
 
 def check_library_location(path, source=True):
     """Updates and removal must never delete a library nested in managed code."""
