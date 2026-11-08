@@ -4,12 +4,14 @@ Maps are optional. They are downloaded from Protomaps, which builds vector maps 
 
 ## Simple setup
 
+In the reader, open **MAPS**, choose a named area and use **COPY COMMAND**. Paste it into Ubuntu Terminal. After it finishes, select **REFRESH LIBRARY**. Once a map is installed, **Add another area** offers the same choices.
+
 ```bash
 ~/.local/bin/fieldkit map-tools
 ~/.local/bin/fieldkit download-map lebanon
 ```
 
-The second command finds a recent daily build, calculates the size, checks disk space and asks before downloading map tiles. It uses two download threads. A interrupted extraction is retried from the beginning. An existing finished map is kept until its replacement passes verification.
+The second command finds a recent daily build, calculates the size, checks disk space and asks before downloading map tiles. It uses two download threads. An interrupted extraction is retried from the beginning. An existing finished map is kept until its replacement passes verification.
 
 | Preset | Saved detail |
 | --- | --- |

@@ -4,7 +4,7 @@
 
 Original illustrated guides, searchable Wikipedia books and optional offline maps, in a clear green interface built for a small touchscreen. Download what you need once. Read it without an account or internet connection.
 
-[Download ZIP](https://github.com/majd-caseresolvetech/switch-field-kit/archive/refs/heads/main.zip) · [Start here](docs/START_HERE.md) · [Install Hekate + Ubuntu first](docs/INSTALL_HEKATE_UBUNTU.md) · [Guide catalogue](docs/CONTENT.md) · [Maps](docs/MAPS.md) · [Troubleshooting](docs/TROUBLESHOOTING.md)
+[Download a tested release](https://github.com/majd-caseresolvetech/switch-field-kit/releases/latest) · [Start here](docs/START_HERE.md) · [Install Hekate + Ubuntu first](docs/INSTALL_HEKATE_UBUNTU.md) · [Guide catalogue](docs/CONTENT.md) · [Maps](docs/MAPS.md) · [Troubleshooting](docs/TROUBLESHOOTING.md)
 
 ![Switch Field Kit interface](docs/interface.png)
 
@@ -21,13 +21,19 @@ Original illustrated guides, searchable Wikipedia books and optional offline map
 
 This is an **Ubuntu application**, not a tool that unlocks a stock console.
 
+| What works on your Switch now? | Start here |
+| --- | --- |
+| Ubuntu desktop | Follow the three installation steps below. |
+| Hekate, but no Ubuntu | [Back up and install Ubuntu first](docs/INSTALL_HEKATE_UBUNTU.md#3-back-up-before-changing-the-card). |
+| Only the normal Nintendo menu | [Check compatibility first](docs/INSTALL_HEKATE_UBUNTU.md#1-check-which-switch-you-have). Some models require specialist hardware work. |
+
 You need a Switch that already boots **Hekate and Switchroot Ubuntu**. If yours does not, follow our [beginner Hekate and Ubuntu installation guide](docs/INSTALL_HEKATE_UBUNTU.md) first. It covers compatibility, backups, Windows/Mac/Linux payload setup, SD space, Ubuntu installation and checking stock fallback, with links to the upstream instructions. Compatibility differs between original unpatched units, patched units, Lite and OLED. Switch 2 is not supported by this project.
 
 The installer **does not format the SD card, change partitions, modify Hekate, install custom firmware or remove your stock boot option**. Keep a working stock fallback and your own backups. A 128 GB card is usable, but the free space in Ubuntu matters more than the number printed on the card.
 
 ## Install once Ubuntu is working
 
-1. Download the ZIP above **on the Switch**, or copy it there from another computer.
+1. Open [the latest release](https://github.com/majd-caseresolvetech/switch-field-kit/releases/latest). Under **Assets**, download `switch-field-kit-<version>.zip` **on the Switch**, or copy it there from another computer. You do not need Node, npm or Git.
 2. Extract it. Open the extracted folder, right-click an empty area and choose **Open in Terminal**.
 3. Run:
 
@@ -37,7 +43,9 @@ bash setup.sh
 
 The installer explains missing dependencies, creates a launcher, starts a local reader and offers to download the original guide pack. Allow **1 GB of free Ubuntu space** for the starter pack and rendering. Wikipedia and maps are separate choices.
 
-Open **Switch Field Kit** from Ubuntu’s Applications menu. After installing the content, turn Wi-Fi off and check the guides you expect to use.
+Open **Switch Field Kit** from Ubuntu’s Applications menu, or open `http://127.0.0.1:8095` in its browser. **HELP** explains how to add content, with commands you can copy into Terminal. **MAPS** offers named areas and calculates the download size before you accept. Wikipedia and maps are not bundled with the app.
+
+After installing content, choose **REFRESH LIBRARY**. Turn Wi-Fi off and check the guides, book searches and maps you expect to use. If a download fails, retry its command. Completed guides are kept and you do not need to reinstall the app.
 
 For a smaller first download:
 
@@ -47,6 +55,8 @@ bash setup.sh --no-guides
 ```
 
 See the [beginner walkthrough](docs/START_HERE.md) for stock-console preparation, storage, downloads and first-use checks.
+
+To update an existing Field Kit installation, extract the newer release and run its `bash setup.sh` as the same Ubuntu user. Your separate library stays in place. The [current source ZIP](https://github.com/majd-caseresolvetech/switch-field-kit/archive/refs/heads/main.zip) is also available for development.
 
 ## Add books and maps
 

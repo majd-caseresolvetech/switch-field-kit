@@ -37,6 +37,21 @@ const out=process.env.FIELDKIT_TEST_OUTPUT||'test-results';fs.mkdirSync(out,{rec
    assert(!(await mapFrame.locator('#status').innerText()).includes('could not'));assert(await mapFrame.locator('body').evaluate(()=>window.fieldMap.queryRenderedFeatures().length)>0);
    await page.screenshot({path:path.join(out,'map.png')});
   }
+  // A clean install must explain downloads without requiring PATH changes or an existing map file.
+  await page.route(origin+'/api/library',route=>route.fulfill({json:{...state,guides:state.guides.map(d=>({...d,installed:false})),books:[],maps:[],map_tools_ready:false}}));
+  await page.goto(origin);await page.getByText('Your reader is ready. Add its guides while online.').waitFor();
+  assert((await page.locator('.notice code').innerText()).startsWith('~/.local/bin/fieldkit guides all'));
+  await context.grantPermissions(['clipboard-read','clipboard-write'],{origin});
+  await page.getByRole('button',{name:'COPY COMMAND',exact:true}).click();
+  assert.equal(await page.evaluate(()=>navigator.clipboard.readText()),'~/.local/bin/fieldkit guides all');
+  assert(await page.getByRole('button',{name:'REFRESH LIBRARY',exact:true}).isVisible());
+  await page.goto(origin+'/#maps');await page.getByRole('combobox',{name:'Map to download'}).selectOption('uk');
+  assert((await page.locator('.command').innerText()).includes('~/.local/bin/fieldkit download-map uk'));
+  assert(!(await page.locator('main').innerText()).includes('/path/to/'));
+  await page.goto(origin+'/#books');await page.getByRole('heading',{name:'3. Add your downloaded file'}).waitFor();
+  assert((await page.locator('main').innerText()).includes('Replace the example path'));
+  await page.goto(origin+'/#help');await page.getByRole('heading',{name:'First setup: add your content'}).waitFor();
+  assert((await page.locator('main .command').first().innerText()).startsWith('~/.local/bin/fieldkit'));
   await page.setViewportSize({width:720,height:506});await page.goto(origin);await page.locator('#guide-cards .card').first().waitFor();assert.equal(await page.locator('body').evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
   assert.deepEqual(errors,[]);assert.deepEqual(remote,[]);assert.deepEqual(bad,[]);
   fs.writeFileSync(path.join(out,'browser.json'),JSON.stringify({status:'passed',readyGuides:ready,errors,externalRequests:remote,badResponses:bad},null,2));

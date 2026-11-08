@@ -65,5 +65,8 @@ def start_kiwix(settings, port):
     log = (Path(settings['data'])/'kiwix.log').open('a')
     try:
         return subprocess.Popen(args, stdout=log, stderr=log)
+    except OSError as e:
+        print('Kiwix could not start: '+str(e)+'. Guides and maps are still available. Repair with ~/.local/bin/fieldkit kiwix, then restart.', flush=True)
+        return None
     finally:
         log.close()

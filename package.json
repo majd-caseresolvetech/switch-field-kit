@@ -1,8 +1,12 @@
 {
   "name": "switch-field-kit",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "description": "Development browser checks for the offline reader. Not needed by end users.",
-  "scripts": {"test:browser": "node tests/browser.cjs"},
-  "devDependencies": {"playwright": "1.62.1"}
+  "scripts": {
+    "test:browser": "node tests/browser.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1"
+  }
 }

@@ -1,4 +1,18 @@
-# Verification for 0.1.0
+# Verification
+
+## Version 0.1.1 review
+
+Reviewed on 8 November 2026:
+
+- 17 automated tests passed locally. Added coverage for missing PDF tools, failed downloads, custom configuration outside the setup shell, startup failure, unsafe library locations and a missing Kiwix executable.
+- The new-install interface was checked in a browser with no downloaded content. The map picker generates a concrete command for each named preset, while book setup explains how to replace its example filename.
+- A populated local library still opens original pages, enlarges them, offers Continue Reading and loads its saved maps. The enlarged-page fit is centred.
+- Browser regression checks cover the new empty states, clipboard content and narrow layout. The GitHub Actions result for the exact commit records their outcome.
+- Release checks build the versioned ZIP and exclude personal files and downloaded publisher material. The new Hekate and Ubuntu guide is included.
+
+The physical Switch was not reachable during this review. The revised setup has not been rerun on that device or on a fresh Noble installation. The earlier ARM64 checks below remain the hardware evidence for 0.1.0, not a fresh hardware test of 0.1.1.
+
+## Version 0.1.0 hardware and content checks
 
 Release checks performed on 8 November 2026:
 

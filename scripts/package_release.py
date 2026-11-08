@@ -7,7 +7,9 @@ from audit_release import ROOT, audit, files
 
 audit()
 out=ROOT/'dist';out.mkdir(exist_ok=True)
-version='0.1.0';name='switch-field-kit-'+version;target=out/(name+'.zip')
+sys.path.insert(0, str(ROOT))
+from fieldkit import __version__
+version=__version__;name='switch-field-kit-'+version;target=out/(name+'.zip')
 with zipfile.ZipFile(str(target),'w',zipfile.ZIP_DEFLATED) as archive:
     for path in files():
         info=zipfile.ZipInfo(name+'/'+str(path.relative_to(ROOT)),date_time=(2026,11,8,0,0,0))

@@ -44,10 +44,12 @@ bash setup.sh --data "/path/to/mounted/library-folder"
 
 Mount that storage before opening the library each time. Its files must remain at that path.
 
+Keep this folder outside the extracted installer and the app's installation folder. Setup rejects those locations because replacing or removing app code must never delete your library.
+
 ## 4. Download and install
 
-1. In Ubuntu, open the [repository](https://github.com/majd-caseresolvetech/switch-field-kit).
-2. Choose **Code → Download ZIP**, or download a packaged release.
+1. In Ubuntu, open the [latest tested release](https://github.com/majd-caseresolvetech/switch-field-kit/releases/latest).
+2. Under **Assets**, download `switch-field-kit-<version>.zip`. The version is part of the filename. Node, npm and Git are not needed to install it.
 3. Open Downloads, right-click the ZIP and choose **Extract Here**.
 4. Open the extracted folder. Right-click empty space and choose **Open in Terminal**.
 5. Type `bash setup.sh` and press Enter.
@@ -57,6 +59,12 @@ If PDF tools are missing, the installer can run Ubuntu’s package manager. It a
 Keep the charger connected during the first download. The installer downloads the complete original PDFs and turns each original sheet into a local image. It checks hashes so a changed or incomplete download is not silently accepted.
 
 When it finishes, open **Switch Field Kit** in the Applications menu. There is no login to the app.
+
+Setup checks that the reader is running before reporting success. If only a content download fails, the reader remains installed and explains the retry command. If you skip the PDF tools, you can still open the reader, but must install those tools before downloading guides. Do not run the whole setup again just because one publisher was unavailable.
+
+In **HELP**, use **COPY COMMAND**, open Ubuntu Terminal, paste and press Enter. A password prompt, if shown by Ubuntu, uses your Ubuntu account password. After a download finishes, choose **REFRESH LIBRARY**. The commands use the full launcher path so they also work before your next sign-in.
+
+For Wikipedia, open **WIKIPEDIA + BOOKS** and follow the numbered steps. For maps, open **MAPS**, choose an area and copy its command. The map download shows the expected size and asks before fetching the tiles. The app ZIP contains the reader and catalogue, not preloaded Wikipedia or maps.
 
 ## 5. Learn the controls
 

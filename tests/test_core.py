@@ -148,6 +148,11 @@ class ServerTests(TemporaryLibrary):
         self.assertEqual(len(data['guides']), 27)
         self.assertFalse(any(d['installed'] for d in data['guides']))
 
+    def test_readiness_requires_the_actual_fieldkit_health_response(self):
+        from fieldkit.install import reader_ready
+        self.assertTrue(reader_ready({'port':self.server.server_port}, timeout=0))
+        self.assertFalse(reader_ready({'port':1}, timeout=0))
+
     def test_ranges_suffixes_invalid_and_head(self):
         path = '/guides/sample/page.jpg'
         status, headers, raw = self.get(path, {'Range':'bytes=2-5'})

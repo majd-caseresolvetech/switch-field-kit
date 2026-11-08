@@ -22,6 +22,8 @@ Logging out of Ubuntu and back in often makes the short command available.
 
 This downloads only the checked editions and skips completed guides. Keep the charger connected. The first rendering can take several minutes. Refresh the app afterwards.
 
+If setup reported a failed guide download, the reader is already installed. Retry the download instead of reinstalling. In the reader, **HELP** provides copy buttons and **REFRESH LIBRARY** reloads the saved catalogue after completion.
+
 ## A PDF download says its checksum changed
 
 The publisher may have replaced the file. Field Kit refuses to silently install a different edition with old section labels. Check for a newer app release. Report the guide ID, not a copy of the book or your private files.
@@ -68,6 +70,8 @@ Run `~/.local/bin/fieldkit map-tools`. Make sure the registered map file is stil
 ## A book disappeared
 
 The book is registered by its full filename without copying it. If you moved it or unplugged its storage, mount it at the original location or add its new path. Then restart Field Kit. Add only finished `.zim` downloads. The first release does not assemble split `.zimaa` files.
+
+If Kiwix itself is missing or cannot run, guides and maps remain available. Open **WIKIPEDIA + BOOKS** for the repair command. Run `~/.local/bin/fieldkit kiwix` while online, then `~/.local/bin/fieldkit restart`.
 
 ## Storage is almost full
 

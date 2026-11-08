@@ -8,13 +8,25 @@
   const saved=(key,fallback)=>{try{return localStorage.getItem(key)||fallback;}catch(_){return fallback;}};
   const save=(key,value)=>{try{localStorage.setItem(key,String(value));}catch(_){}};
   const fetchJSON=async url=>{const r=await fetch(url,{cache:'no-store'});if(!r.ok)throw Error('A saved library file could not load: '+url);return r.json();};
-  function command(text){return el('code',text,'command');}
+  function command(text){
+    const box=el('div',undefined,'command-box'),code=el('code',text.replace(/^fieldkit /gm,'~/.local/bin/fieldkit '),'command'),status=el('span','','meta');
+    status.setAttribute('role','status');
+    const copy=button('COPY COMMAND',async()=>{
+      try{await navigator.clipboard.writeText(code.textContent);status.textContent='Copied. Paste into Ubuntu Terminal and press Enter.';}
+      catch(_){const range=document.createRange();range.selectNodeContents(code);const selection=window.getSelection();selection.removeAllRanges();selection.addRange(range);status.textContent='Command selected. Copy it, then paste into Ubuntu Terminal.';}
+    });
+    box.append(code,copy,status);return box;
+  }
+  function refreshButton(){return button('REFRESH LIBRARY',route);}
+  function downloadSteps(){return el('p','Open Ubuntu Terminal, paste the command and press Enter. Keep Wi-Fi and the charger connected until it finishes, then refresh this library.','small-note');}
   function intro(title,text){main.append(el('h1',title),el('p',text));}
   function error(e){const p=el('p',e.message||String(e));p.id='app-error';p.setAttribute('role','alert');main.append(p);}
   function home(){
     intro('Expert original guides','Complete publications with the authors’ instructions and diagrams. Choose a topic, then jump to a method.');
     const ready=library.guides.filter(d=>d.installed).length;
-    if(!ready){const n=el('div',undefined,'notice');n.append(el('strong','Your reader is ready. Download its guides once while online.'),command('fieldkit guides all'),el('p','The download comes directly from each publisher. After it finishes, refresh this page.','small-note'));main.append(n);}
+    if(!ready){const n=el('div',undefined,'notice');n.append(el('strong','Your reader is ready. Add its guides while online.'),downloadSteps(),command('fieldkit guides all'),refreshButton(),el('p','About 128 MB to download. Allow 1 GB free for the complete pack. HELP explains setup and missing PDF tools.','small-note'));main.append(n);}
+    const last=library.guides.find(d=>d.installed&&d.id===saved('last-guide',''));
+    if(last)main.append(link('CONTINUE READING: '+last.title,'#guide='+encodeURIComponent(last.id),'button resume'));
     const bar=el('div',undefined,'toolbar'),query=el('input'),region=el('select'),topic=el('select'),only=el('button','READY OFFLINE');
     query.type='search';query.placeholder='Find water, shelter, plants…';query.setAttribute('aria-label','Find a guide');
     region.setAttribute('aria-label','Region');topic.setAttribute('aria-label','Topic');
@@ -30,7 +42,7 @@
     function render(){grid.replaceChildren();const q=query.value.trim().toLowerCase();const rows=library.guides.filter(d=>(!readyOnly||d.installed)&&(region.value==='all'||[region.value,'International'].includes(d.region))&&(topic.value==='all'||d.categories.includes(topic.value))&&[d.title,d.original,d.publisher,d.scope].join(' ').toLowerCase().includes(q));count.textContent=rows.length+' guides shown · '+ready+' saved offline';
       for(const d of rows){const card=el('article',undefined,'card');card.append(el('span',d.installed?'SAVED OFFLINE · PUBLISHER ORIGINAL':'AVAILABLE TO DOWNLOAD','status'+(d.installed?'':' pending')),el('h3',d.title),el('small',d.publisher+' · '+d.edition+' · '+d.region+' · '+d.language),el('p',d.scope));
         const foot=el('div',undefined,'open');foot.append(el('p',d.pages+' original PDF sheets','meta'));
-        if(d.installed)foot.append(link('OPEN GUIDE','#guide='+encodeURIComponent(d.id),'button primary'));else foot.append(button('HOW TO DOWNLOAD',()=>{foot.replaceChildren(command('fieldkit guides '+d.id));}));card.append(foot);grid.append(card);}
+        if(d.installed)foot.append(link('OPEN GUIDE','#guide='+encodeURIComponent(d.id),'button primary'));else foot.append(button('HOW TO DOWNLOAD',()=>{foot.replaceChildren(downloadSteps(),command('fieldkit guides '+d.id),refreshButton());}));card.append(foot);grid.append(card);}
       if(!rows.length)grid.append(el('p','No matching guides. Try a different topic or region.','empty'));
     }
     query.oninput=()=>{clearTimeout(timer);timer=setTimeout(render,150);};region.onchange=render;topic.onchange=render;cleanup=()=>clearTimeout(timer);render();
@@ -59,11 +71,19 @@
     function show(n,scroll=true){page=Math.max(1,Math.min(d.pages,Math.floor(n)||d.start));input.value=page;label.textContent=sectionAt(page);image.src='/guides/'+id+'/'+String(page).padStart(3,'0')+'.jpg';image.alt=d.publisher+', '+d.original+', original sheet '+page+' of '+d.pages;prev.disabled=page===1;next.disabled=page===d.pages;pdf.href='/guides/'+id+'/original.pdf#page='+page;save('page:'+id,page);save('last-guide',id);if(scroll)window.scrollTo(0,0);}
     show(page,false);
   }
-  function books(){intro('Wikipedia + books','Add ZIM books once, then read and search their full text without internet.');if(!library.books.length){const box=el('div',undefined,'empty');box.append(el('h2','Choose a book that fits your card'),el('p','Download a .zim book from the Kiwix library while online. Start with Simple English Wikipedia or a small topic collection.'),link('OPEN KIWIX CATALOGUE · INTERNET REQUIRED','https://library.kiwix.org/'),command('fieldkit kiwix\nfieldkit add-book "/path/to/your-book.zim"\nfieldkit restart'),el('p','The file is registered in place, without a second copy. Files larger than 4 GB need Linux storage, not the FAT32 boot partition.','small-note'));main.append(box);return;}
+  function books(){intro('Wikipedia + books','Add ZIM books once, then read and search their full text without internet.');if(!library.books.length){const box=el('div',undefined,'empty');box.append(el('h2','1. Choose a book that fits your card'),el('p','Download a complete .zim book from the Kiwix library while online. Start with Simple English Wikipedia or a small topic collection. Note its filename and leave it in a permanent folder.'),link('OPEN KIWIX CATALOGUE · INTERNET REQUIRED','https://library.kiwix.org/'),el('h2','2. Install the book reader'),downloadSteps(),command('fieldkit kiwix'),el('h2','3. Add your downloaded file'),el('p','Replace the example path below with your .zim file. You can type ~/.local/bin/fieldkit add-book followed by a space, then drag the file into Terminal and press Enter.'),command('fieldkit add-book "/path/to/your-book.zim"'),el('h2','4. Start the book reader'),command('fieldkit restart'),refreshButton(),el('p','The file is registered in place, without a second copy. Files larger than 4 GB need Linux storage, not the FAT32 boot partition.','small-note'));main.append(box);return;}
     const ul=el('ul');for(const b of library.books)ul.append(el('li',b.title+(b.available?'':' · STORAGE NOT MOUNTED')));main.append(ul);
-    if(library.kiwix_running){const frame=el('iframe');frame.className='book-frame';frame.title='Offline Kiwix library';frame.src='/kiwix/';main.append(frame);}else main.append(command('fieldkit kiwix\nfieldkit restart'));
+    if(library.kiwix_running){const frame=el('iframe');frame.className='book-frame';frame.title='Offline Kiwix library';frame.src='/kiwix/';main.append(frame);}else main.append(el('p','The book reader is not running. Keep your registered files in place, repair Kiwix while online, then restart.'),command('fieldkit kiwix &&\nfieldkit restart'),refreshButton());
   }
-  function maps(){intro('Offline maps','Saved places, roads and paths. No internet, live GPS or route calculation.');if(!library.maps.length){const box=el('div',undefined,'empty');box.append(el('p','Map data is optional so you can choose its size and region.'),command('fieldkit map-tools\nfieldkit add-map "/path/to/protomaps-region.pmtiles" --name "My area"'),el('p','Use Protomaps v4 vector maps. See the repository’s maps guide for UK, Lebanon, Prague and world-overview presets.'));main.append(box);return;}
+  function mapSetup(){
+    const box=el('div',undefined,'empty'),select=el('select');select.setAttribute('aria-label','Map to download');
+    for(const [value,title] of [['lebanon','Lebanon'],['uk','United Kingdom'],['prague','Prague'],['world','World overview'],['europe-levant','Europe to Levant overview']]){const o=el('option',title);o.value=value;select.append(o);}
+    const instructions=el('div');const update=()=>instructions.replaceChildren(command('fieldkit map-tools &&\nfieldkit download-map '+select.value));select.onchange=update;
+    box.append(el('h2','Add an offline map'),el('p','Choose an area. The download command calculates its size and asks before fetching map tiles. Only accept a size that fits your card.'),select,downloadSteps(),instructions,refreshButton(),el('p','The Europe to Levant preset is an overview, not detailed walking coverage. Maps do not calculate routes.','small-note'));update();return box;
+  }
+  function maps(){intro('Offline maps','Saved places, roads and paths. No internet, live GPS or route calculation.');if(!library.maps.length){main.append(mapSetup());return;}
+    if(!library.map_tools_ready){main.append(el('p','Your map files are registered. Finish installing the local viewer while online, then refresh.'),command('fieldkit map-tools'),refreshButton());return;}
+    const more=el('details');more.append(el('summary','Add another area'),mapSetup());main.append(more);
     const frame=el('iframe');frame.title='Offline map';frame.className='map-frame';frame.src='/web/map.html';main.append(frame);cleanup=()=>{frame.src='about:blank';};
   }
   function signals(){intro('Phrases + signals','A short communication card. Point to the phrase if pronunciation is difficult.');const box=el('div',undefined,'notice');box.append(el('h2','SOS in Morse'),el('div','···  ———  ···','signal'),el('p','Three short signals, three long signals, three short signals. This screen is a reference and does not transmit a radio message.'));main.append(box);
@@ -72,6 +92,7 @@
     const scroll=el('div',undefined,'scroll-table');scroll.append(table);main.append(scroll,el('p','Basic project-written phrases, not a certified translation or interpreter service. See Help for radio limitations.','meta'));
   }
   function help(){intro('Using your field kit','Download while connected. Read from local storage when disconnected.');const box=el('div',undefined,'help');main.append(box);
+    box.append(el('h2','First setup: add your content'),el('p','Installing the reader does not download Wikipedia or maps. Add only what you need, then check it with Wi-Fi off.'),downloadSteps(),command('fieldkit guides all'),link('ADD WIKIPEDIA OR BOOKS','#books'),link('ADD MAPS','#maps'),refreshButton(),el('p','If a guide download reports missing PDF tools, run this once in Ubuntu Terminal. Ubuntu asks for your account password.'),command('sudo apt install poppler-utils'),el('p','Then repeat the guide download command. Completed guides are kept.'));
     for(const [title,text] of [['Open a guide','EXPERT GUIDES shows complete publisher originals. Filter by region and topic. CONTENTS + FIND jumps to a method. ENLARGE makes drawings easier to inspect.'],['Keep stock boot','This app does not change Hekate, stock firmware or SD partitions. Return to stock using your existing boot-menu entry. Ubuntu and your stock fallback must be prepared before installing this app.'],['Save battery','Lower screen brightness to a comfortable level. Turn off Wi-Fi after downloads. Close Maps when reading. The reader loads one original sheet at a time and has no decorative animation. Set screen dimming and battery sleep in Ubuntu Settings.'],['Foraging coverage','The starter collection contains identification and plant-use references. It is not a complete edible-plant or mushroom key. Each guide shows its author, edition and scope.'],['Maps and radio','Map detail depends on the archive you downloaded. A drawn path does not establish access or safe passage. The Switch has no built-in AM/FM broadcast receiver or GPS. Use separate equipment for those functions.'],['Offline check','Open a guide and enlarge a diagram. Open a book and search it. Open a map and inspect the places you need. Then turn Wi-Fi off and repeat. If a page is unavailable, download or repair it before relying on that part of the library.']]){box.append(el('h2',title),el('p',text));}
     box.append(el('h2','Useful commands'),command('fieldkit guides all\nfieldkit doctor\nfieldkit restart\nfieldkit uninstall'),el('p','Uninstall removes this app and its service. Downloaded files are kept. The software is MIT licensed. Publisher books, maps and third-party tools retain their own licences.'));
   }

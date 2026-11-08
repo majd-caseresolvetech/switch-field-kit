@@ -12,6 +12,7 @@ from urllib.parse import unquote, urlsplit
 
 from .common import APP, catalogue, config, data_dir, read_json
 from .books import start_kiwix
+from . import __version__
 
 class Server(socketserver.ThreadingMixIn, http.server.HTTPServer):
     daemon_threads = True
@@ -69,10 +70,11 @@ class Handler(http.server.BaseHTTPRequestHandler):
             books = read_json(root/'books.json', [])
             maps = read_json(root/'maps.json', [])
             self.json({'guides':docs, 'books':[{'title':b['title'], 'available':Path(b['path']).is_file()} for b in books],
-                       'maps':maps, 'version':'0.1.0', 'kiwix_running':bool(self.server.kiwix and self.server.kiwix.poll() is None)})
+                       'maps':maps, 'version':__version__, 'kiwix_running':bool(self.server.kiwix and self.server.kiwix.poll() is None),
+                       'map_tools_ready':(root/'map-assets/sources.json').is_file()})
             return
         if path == '/api/health':
-            self.json({'app':'Switch Field Kit', 'version':'0.1.0', 'offline':True})
+            self.json({'app':'Switch Field Kit', 'version':__version__, 'offline':True})
             return
         if path.startswith('/kiwix/'):
             self.proxy_kiwix()

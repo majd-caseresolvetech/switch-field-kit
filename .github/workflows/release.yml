@@ -20,4 +20,5 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create v0.1.0 dist/switch-field-kit-0.1.0.zip dist/SHA256SUMS --target "$GITHUB_SHA" --title "Switch Field Kit 0.1.0" --notes-file RELEASE_NOTES.md
+          release_version=$(python3 -c 'from fieldkit import __version__; print(__version__)')
+          gh release create "v$release_version" "dist/switch-field-kit-$release_version.zip" dist/SHA256SUMS --target "$GITHUB_SHA" --title "Switch Field Kit $release_version" --notes-file RELEASE_NOTES.md
