@@ -1,5 +1,9 @@
 # Troubleshooting
 
+## Hekate or Ubuntu is not installed, or will not start
+
+Use [Install Hekate and Switchroot Ubuntu first](INSTALL_HEKATE_UBUNTU.md), including its final problem table. It separates a black recovery-mode screen from a working Hekate menu and explains the prerequisites. The app installer cannot repair bootloader or partition problems. Do not repartition a working library as an app troubleshooting step.
+
 ## `fieldkit: command not found`
 
 Your terminal may not yet include `~/.local/bin` in its search path. Use the full command:

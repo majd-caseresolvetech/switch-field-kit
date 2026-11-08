@@ -2,17 +2,21 @@
 
 There are two separate jobs: get Ubuntu working on your Switch, then install Field Kit inside Ubuntu.
 
+**Hekate or Ubuntu not installed yet?** Follow [Install Hekate and Switchroot Ubuntu first](INSTALL_HEKATE_UBUNTU.md). It starts with compatibility and backups, then walks through Hekate, SD space, Ubuntu and stock fallback. Return here when the Ubuntu desktop works.
+
 ## 1. Check where you are starting
 
 | What you see when you turn it on | What to do |
 | --- | --- |
 | Ubuntu desktop already works | Continue to step 3. Do not repartition a working setup. |
-| Hekate works, but Ubuntu is absent | Read the current Switchroot installation guide, back up first and prepare Ubuntu. |
-| Only the normal Nintendo menu | Check hardware compatibility first. Field Kit cannot make an incompatible stock console boot Linux. |
+| Hekate works, but Ubuntu is absent | Follow the [backups and Ubuntu preparation guide](INSTALL_HEKATE_UBUNTU.md#3-back-up-before-changing-the-card). |
+| Only the normal Nintendo menu | Start with the [hardware compatibility check](INSTALL_HEKATE_UBUNTU.md#1-check-which-switch-you-have). Field Kit cannot make an incompatible stock console boot Linux. |
 
 “Switch 1” includes different hardware revisions. Some original units support the documented payload route. Patched units and later models have different requirements. Switchroot’s [FAQ](https://wiki.switchroot.org/wiki/faq) explains support for chipped 2019, Lite and OLED units. Hardware work is a separate specialist task, not part of this installer.
 
 ## 2. Prepare Ubuntu and preserve your fallback
+
+The [Hekate and Ubuntu walkthrough](INSTALL_HEKATE_UBUNTU.md) covers this stage in order, including what success should look like before moving on.
 
 Use the [official Switchroot Linux page](https://wiki.switchroot.org/wiki/linux) to choose a supported image. The [Noble 24.04 guide](https://wiki.switchroot.org/wiki/linux/l4t-ubuntu-noble-installation-guide) is the upstream reference for a fresh Noble installation. Follow that page’s current prerequisites and steps, rather than an old copied tutorial.
 

@@ -4,7 +4,7 @@
 
 Original illustrated guides, searchable Wikipedia books and optional offline maps, in a clear green interface built for a small touchscreen. Download what you need once. Read it without an account or internet connection.
 
-[Download ZIP](https://github.com/majd-caseresolvetech/switch-field-kit/archive/refs/heads/main.zip) · [Start here](docs/START_HERE.md) · [Guide catalogue](docs/CONTENT.md) · [Maps](docs/MAPS.md) · [Troubleshooting](docs/TROUBLESHOOTING.md)
+[Download ZIP](https://github.com/majd-caseresolvetech/switch-field-kit/archive/refs/heads/main.zip) · [Start here](docs/START_HERE.md) · [Install Hekate + Ubuntu first](docs/INSTALL_HEKATE_UBUNTU.md) · [Guide catalogue](docs/CONTENT.md) · [Maps](docs/MAPS.md) · [Troubleshooting](docs/TROUBLESHOOTING.md)
 
 ![Switch Field Kit interface](docs/interface.png)
 
@@ -21,7 +21,7 @@ Original illustrated guides, searchable Wikipedia books and optional offline map
 
 This is an **Ubuntu application**, not a tool that unlocks a stock console.
 
-You need a Switch that already boots **Hekate and Switchroot Ubuntu**. A stock-only console needs separate preparation. Compatibility differs between original unpatched units, patched units, Lite and OLED. Follow the [official Switchroot documentation](https://wiki.switchroot.org/wiki/linux) and [compatibility FAQ](https://wiki.switchroot.org/wiki/faq) first. Switch 2 is not supported by this project.
+You need a Switch that already boots **Hekate and Switchroot Ubuntu**. If yours does not, follow our [beginner Hekate and Ubuntu installation guide](docs/INSTALL_HEKATE_UBUNTU.md) first. It covers compatibility, backups, Windows/Mac/Linux payload setup, SD space, Ubuntu installation and checking stock fallback, with links to the upstream instructions. Compatibility differs between original unpatched units, patched units, Lite and OLED. Switch 2 is not supported by this project.
 
 The installer **does not format the SD card, change partitions, modify Hekate, install custom firmware or remove your stock boot option**. Keep a working stock fallback and your own backups. A 128 GB card is usable, but the free space in Ubuntu matters more than the number printed on the card.
 
