@@ -48,6 +48,8 @@ Keep this folder outside the extracted installer and the app's installation fold
 
 ## 4. Download and install
 
+Use **0.1.3 or newer** for the startup and shortcut features in this guide. If the release page still shows an older version, use this [tested 0.1.3 source ZIP](https://github.com/majd-caseresolvetech/switch-field-kit/archive/8436b14e895d45db635be21269b41a4f697cc5a9.zip), then continue at step 3. It installs directly with the same command, without building anything.
+
 1. In Ubuntu, open the [latest tested release](https://github.com/majd-caseresolvetech/switch-field-kit/releases/latest).
 2. Under **Assets**, download `switch-field-kit-<version>.zip`. The version is part of the filename. Node, npm and Git are not needed to install it.
 3. Open Downloads, right-click the ZIP and choose **Extract Here**.
