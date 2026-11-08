@@ -33,6 +33,8 @@ The installer **does not format the SD card, change partitions, modify Hekate, i
 
 ## Install once Ubuntu is working
 
+These startup instructions require **0.1.3 or newer**. If Releases still shows an older version, download the [tested 0.1.3 source ZIP](https://github.com/majd-caseresolvetech/switch-field-kit/archive/8436b14e895d45db635be21269b41a4f697cc5a9.zip), extract it and use the same `bash setup.sh` command below. This archive contains the fixes and needs no build step.
+
 1. Open [the latest release](https://github.com/majd-caseresolvetech/switch-field-kit/releases/latest). Under **Assets**, download `switch-field-kit-<version>.zip` **on the Switch**, or copy it there from another computer. You do not need Node, npm or Git.
 2. Extract it. Open the extracted folder, right-click an empty area and choose **Open in Terminal**.
 3. Run:
